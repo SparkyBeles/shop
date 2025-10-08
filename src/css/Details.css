@@ -1,0 +1,96 @@
+@media (max-width: 800px){
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.movie-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    margin: 10px;
+}
+
+.movie-poster img {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+
+.buy-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+
+.buy-buttons button {
+    width: 120px;
+    height: 40px;
+    color: black;
+    margin-right: 10px;
+    background-color: rgb(168, 232, 232);
+    border-radius: 5px;
+    border: rgb(241, 244, 245) solid 2px;
+}
+}
+
+
+
+@media (min-width: 801px){
+
+    .movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.movie-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    margin: 10px;
+}
+
+.movie-poster img {
+    width: 400px;
+    height: 600px;
+    margin: 10px;
+}
+
+.buy-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+
+.buy-buttons button {
+    width: 120px;
+    height: 40px;
+    color: black;
+    margin-right: 10px;
+    background-color: rgb(168, 232, 232);
+    border-radius: 5px;
+    border: rgb(241, 244, 245) solid 2px;
+}
+
+}
+
+
