@@ -17,17 +17,17 @@
 
     
 
-    // combined list of movie and shows. if someone wants separate list for movie and shows separate it here.
+    
     const combined = [
-      ...(movies.results ?? []).map(m => ({...m,   // If you want something specific from the tmdb api
-        type: "movie",
+      ...(movies.results ?? []).map(m => ({...m,   
+        type: "movie",    // for specific query
         id: m.id,
         title: m.title,
         poster: m.poster_path
       })),
 
-      ...(series.results ?? []).map(s => ({ ...s,   // If you want something specific from the tmdb api 
-        type: "series",
+      ...(series.results ?? []).map(s => ({ ...s,   
+        type: "series",    // for specific query
         id: s.id,
         title: s.name,
         poster: s.poster_path
