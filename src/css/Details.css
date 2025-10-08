@@ -1,4 +1,4 @@
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .movie {
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     padding: 0.5rem;
     font-size: 0.75rem;
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
   }
 
   .movie-info {
@@ -19,7 +19,7 @@
   }
 
   .movie-poster img {
-    width: 13rem;
+    width: 12rem;
     height: 18rem;
     margin: 0.5rem;
   }
@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 901px) and (max-width: 1200px) {
+@media (min-width: 801px) and (max-width: 1200px) {
   .movie {
     display: flex;
     flex-direction: row;
@@ -51,19 +51,21 @@
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
-    margin: 4rem;
+    margin: 2rem;
   }
 
   .movie-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 38rem;
     background-color: rgb(241, 244, 245);
-    margin: 0.5rem;
+    
   }
 
   .movie-poster img {
-    width: 23rem;
+    width: 21rem;
     height: 38rem;
     margin: 0.5rem;
   }
@@ -102,8 +104,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: rgb(241, 244, 245);
     margin: 0.5rem;
+    height: 44rem;
   }
 
   .movie-poster img {
