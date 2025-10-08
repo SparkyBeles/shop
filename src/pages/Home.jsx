@@ -1,9 +1,8 @@
 import Menu from "../components/Menu";
-import api from "../api/tmdbAPI";
 import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
-import MovieCard from "../components/movieCard";
+import MovieCard from "../components/MovieCard";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 function Home() {
