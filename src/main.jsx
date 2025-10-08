@@ -6,6 +6,9 @@ import cartReducer from './features/CartSlice.js';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import Cart from './pages/Cart.jsx';
+import Confirm from './pages/Confirm.jsx';
+import Checkout from './pages/Checkout.jsx';
+import Details from './pages/Details.jsx';
 
 
 const store = configureStore({
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
     path: "/cart",
     Component: Cart
   },
+  {
+    path: "/details",
+    Component: Details
+  },
+  {
+    path: "/checkout",
+    Component: Checkout
+  },
+  {
+    path: "/confirm",
+    Component: Confirm
+  }
 
 ])
 
