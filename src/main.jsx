@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import cartReducer from './features/CartSlice.js';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import Cart from './pages/Cart.jsx';
 
 
 const store = configureStore({
@@ -18,7 +19,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Home
-  }
+  },
+  {
+    path: "/cart",
+    Component: Cart
+  },
+
 ])
 
 createRoot(document.getElementById('root')).render(
