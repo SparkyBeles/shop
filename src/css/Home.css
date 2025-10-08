@@ -1,3 +1,42 @@
 body {
     background-color: #aaf7ff;
 }
+
+img.poster_grid {
+    margin-bottom: 5px;
+}
+
+section.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e0fafc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+}
+
+div.movie_list_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 1px 1px 0px 0px rgb(223, 223, 223);
+}
+
+div.movie_list_buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+span.movie_grid_title {
+    font-weight: 600;
+}
+
+span.movie_grid_price {
+    color: red;
+    font-weight: 600;
+}
