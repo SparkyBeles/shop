@@ -1,96 +1,135 @@
-@media (max-width: 800px){
-
-.movie {
+@media (max-width: 900px) {
+  .movie {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(241, 244, 245);
-    padding: 10px;
-    font-size: 12px;
-    border-radius: 5px;
-    margin: 10px;
-}
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+  }
 
-.movie-info {
-
+  .movie-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(241, 244, 245);
-    margin: 10px;
-}
+    margin: 0.5rem;
+  }
 
-.movie-poster img {
-    width: 200px;
-    height: 300px;
-    margin: 10px;
-}
+  .movie-poster img {
+    width: 13rem;
+    height: 18rem;
+    margin: 0.5rem;
+  }
 
-.buy-buttons {
+  .buy-buttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    
-}
+  }
 
-.buy-buttons button {
-    width: 120px;
-    height: 40px;
+  .buy-buttons button {
+    width: 8rem;
+    height: 3rem;
     color: black;
     margin-right: 10px;
     background-color: rgb(168, 232, 232);
     border-radius: 5px;
     border: rgb(241, 244, 245) solid 2px;
+    font-size: 1rem;
+  }
 }
-}
 
-
-
-@media (min-width: 801px){
-
-    .movie {
+@media (min-width: 901px) and (max-width: 1200px) {
+  .movie {
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: rgb(241, 244, 245);
-    padding: 10px;
-    font-size: 12px;
-    border-radius: 5px;
-    margin: 10px;
-}
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin: 4rem;
+  }
 
-.movie-info {
-
+  .movie-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(241, 244, 245);
-    margin: 10px;
-}
+    margin: 0.5rem;
+  }
 
-.movie-poster img {
-    width: 400px;
-    height: 600px;
-    margin: 10px;
-}
+  .movie-poster img {
+    width: 23rem;
+    height: 38rem;
+    margin: 0.5rem;
+  }
 
-.buy-buttons {
+  .buy-buttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    
-}
+  }
 
-.buy-buttons button {
-    width: 120px;
-    height: 40px;
+  .buy-buttons button {
+    width: 10rem;
+    height: 4rem;
     color: black;
-    margin-right: 10px;
+    margin-right: 0.5rem;
     background-color: rgb(168, 232, 232);
-    border-radius: 5px;
+    border-radius: 0.25rem;
     border: rgb(241, 244, 245) solid 2px;
+    font-size: 1rem;
+  }
 }
 
+@media (min-width: 1201px) {
+  .movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin: 2rem;
+  }
+
+  .movie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 244, 245);
+    margin: 0.5rem;
+  }
+
+  .movie-poster img {
+    width: 35rem;
+    height: 44rem;
+    margin: 0.5rem;
+  }
+
+  .buy-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .buy-buttons button {
+    width: 10rem;
+    height: 4rem;
+    color: black;
+    margin-right: 0.5rem;
+    background-color: rgb(168, 232, 232);
+    border-radius: 0.25rem;
+    border: rgb(241, 244, 245) solid 2px;
+    font-size: 1rem;
+  }
 }
 
-
+#buy-now-btn:active {
+    transform: scale(0.97);
+}

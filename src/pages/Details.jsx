@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import '../css/Details.css'; 
+import { useNavigate } from "react-router";
 
 function Details() {
+
+    const navigate = useNavigate();
+
+    const goToCheckout = () => {
+        navigate('/Checkout');
+    }
 
     const [movie, setMovie] = useState();
 
@@ -23,7 +30,7 @@ function Details() {
         fetchMovie()
         console.log('Fetch work...')
 
-    }, [APIKey]);
+    }, [apiURL]);
 
   return (
 
@@ -34,9 +41,6 @@ function Details() {
 
         {movie ? (
             <>
-         
-        
-
          <div className="movie-poster">
 
             {movie.poster_path && (
@@ -48,14 +52,17 @@ function Details() {
 
 
           <h1>{movie.title}  ({movie.release_date?.slice(0 , 4) }) </h1>
-          <p>{movie.overview?.slice(0 , 600)} </p>
+          <p>{movie.overview?.slice(0 , 400)} </p>
 
           <h2> €29</h2>
 
           <div className="buy-buttons">
           
-          <button>Add to cart</button>
-          <button>Buy now</button>
+
+          {/* add to cart, cart-icon change number of items it has */}
+          <button>Add to cart</button> 
+          {/* Buy now, adds to cart and navigate to check out. */}
+          <button id="buy-now-btn" onClick={goToCheckout}>Buy now</button>
           </div>
           
            
