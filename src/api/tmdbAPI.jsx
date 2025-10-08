@@ -20,14 +20,14 @@
     
     const combined = [
       ...(movies.results ?? []).map(m => ({...m,   
-        type: "movie",    // for specific query
+        type: "movie",    // for movie specific query
         id: m.id,
         title: m.title,
         poster: m.poster_path
       })),
 
       ...(series.results ?? []).map(s => ({ ...s,   
-        type: "series",    // for specific query
+        type: "series",    // for shows specific query
         id: s.id,
         title: s.name,
         poster: s.poster_path
