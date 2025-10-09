@@ -16,7 +16,7 @@ function Sidebar({ open, onClose, children }) {
       className={`sidebar ${open ? "is-open" : ""}`}
       aria-hidden={!open}
     >
-      <button className="close-btn" onClick={onClose}>×</button>
+      <button className="close-btn" onClick={onClose}> x </button>
       {children}
     </div>
   );
