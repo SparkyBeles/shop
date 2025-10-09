@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
 import MovieCard from "../components/MovieCard";
+import SideMenu from "../components/SideMenu";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
+
 function Home() {
   const [items, setItems] = useState([]);
+
+  const [sideMenuOpen, setSideMenuOpen] = useState(false);
+
+  const toggleSideMenu = () => setSideMenuOpen(prev => !prev);
+
 
   useEffect(() => {
     (async () => {
@@ -17,7 +24,8 @@ function Home() {
 
   return (
     <section>
-      <Menu />
+      <Menu toggleSideMenu= { toggleSideMenu }/>
+      <SideMenu isOpen = { sideMenuOpen } toggleSideMenu= { toggleSideMenu }/>
 
       <section className="movie-container">
         <div className="movie-grid">

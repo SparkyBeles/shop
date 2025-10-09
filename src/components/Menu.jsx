@@ -1,10 +1,15 @@
 import { Link } from "react-router";
 import "../css/Menu.css";
 
-function Menu() {
+function Menu({toggleSideMenu}) {
+
 
     return (
         <div className="menu">
+
+            <img src="./menu.svg" alt="menu" 
+            onClick={toggleSideMenu}/>
+
             <Link to="/">
             <h2>Home</h2>
             </Link>
