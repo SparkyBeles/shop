@@ -9,6 +9,7 @@ import Cart from './pages/Cart.jsx';
 import Confirm from './pages/Confirm.jsx';
 import Checkout from './pages/Checkout.jsx';
 import Details from './pages/Details.jsx';
+import Layout from './pages/Layout.jsx';
 
 
 const store = configureStore({
@@ -20,27 +21,27 @@ const store = configureStore({
 const router = createBrowserRouter([
 
   {
-    element: <Home />,
+    element: <Layout />,
 
     children: [
-    {path: "/",
-    Component: Home
+    {index: true,
+    element: <Home />
   },
   {
     path: "/cart",
-    Component: Cart
+    element: <Cart />
   },
   {
     path: "/details",
-    Component: Details
+    element: <Details />
   },
   {
     path: "/checkout",
-    Component: Checkout
+    element: <Checkout />
   },
   {
     path: "/confirm",
-    Component: Confirm
+    element: <Confirm />
   }
 ]}
 

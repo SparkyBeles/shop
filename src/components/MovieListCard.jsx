@@ -1,20 +1,22 @@
 import { Link } from "react-router";
 
-function MovieListCard() {
+function MovieListCard({poster, title, price}) {
 
     return (
         <>
-        <div class="movie_list_card">
-            <img class="poster_grid" src="src/assets/react.svg" />
-            <span class="movie_grid_title">Movie title</span>
-            <span class="movie_grid_price">€29</span>
-        <div class="movie_list_buttons">
-            <button class="add_to_cart">
-                <img class="cart_button" src="src/assets/cart.png"></img>
+        <div className="movie_list_card">
+                <div className="movie_card_details">
+                    <img className="poster_grid" src={poster} />
+                    <span className="movie_grid_title">{title}</span>
+                    <span className="movie_grid_price">{price} kr</span>
+                </div>
+            <div className="movie_list_buttons">
+            <button className="add_to_cart">
+                <img className="cart_button" src="src/assets/cart.png"></img>
             </button>
             <Link to="/checkout">
-            <button class="buy_now">
-                <img class="cart_button" src="src/assets/coins.png"></img>
+            <button className="buy_now">
+                <img className="cart_button" src="src/assets/coins.png"></img>
                  </button>
             </Link>
         </div>

@@ -4,11 +4,11 @@ const Header = () => {
 
 
     return (
-        <section class="header">
+        <section className="header">
             
             <span id="logo">Movieshop</span>
             <Link to="/cart">
-            <img class="cart_icon" src="src/assets/cart.png"></img>
+            <img className="cart_icon" src="src/assets/cart.png"></img>
             </Link>
         </section>
     )
