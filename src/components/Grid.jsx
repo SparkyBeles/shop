@@ -7,8 +7,6 @@ function Grid() {
         <section class="grid">
             <Link to="/details">
             <MovieListCard /></Link>
-            <MovieListCard></MovieListCard>
-            <MovieListCard></MovieListCard>
         </section>
     )
 }

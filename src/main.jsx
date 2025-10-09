@@ -20,7 +20,10 @@ const store = configureStore({
 const router = createBrowserRouter([
 
   {
-    path: "/",
+    element: <Home />,
+
+    children: [
+    {path: "/",
     Component: Home
   },
   {
@@ -39,6 +42,7 @@ const router = createBrowserRouter([
     path: "/confirm",
     Component: Confirm
   }
+]}
 
 ])
 

@@ -3,7 +3,20 @@ body {
 }
 
 img.poster_grid {
+    width: 150px;
     margin-bottom: 5px;
+}
+
+img.cart_button {
+    width: 20px;
+    height: 20px;
+    object-fit: scale-down;
+    float: center;
+}
+
+img.cart_icon {
+    width: 35px;
+    height: 35px;
 }
 
 section.grid {
@@ -14,6 +27,14 @@ section.grid {
   border-radius: 5px;
   padding: 15px;
   margin: 5px;
+}
+
+section.header {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 div.movie_list_card {
@@ -29,6 +50,7 @@ div.movie_list_card {
 div.movie_list_buttons {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 8px;
 }
 
@@ -39,4 +61,25 @@ span.movie_grid_title {
 span.movie_grid_price {
     color: red;
     font-weight: 600;
+}
+
+button.buy_now {
+    background-color: rgb(225, 225, 225);
+    padding: 10px;
+    margin-left: 2px;
+    border: 0px;
+    border-radius: 100px;
+}
+button.add_to_cart {
+    background-color: rgb(225, 225, 225);
+    padding: 10px;
+    margin-right: 2px;
+    border: 0px;
+    border-radius: 100px;
+}
+
+#logo {
+    font-family: Modak;
+    font-weight: 300;
+    font-size: 4rem;
 }
