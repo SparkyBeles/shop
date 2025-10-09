@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import Menu from "../components/Menu";
-import "../CSS/Confirm.css"; 
+import "../css/Confirm.css"; 
 
 function Confirm() {
   const location = useLocation();
