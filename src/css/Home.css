@@ -83,3 +83,23 @@ button.add_to_cart {
     font-weight: 300;
     font-size: 4rem;
 }
+.movie-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4px;
+    
+    
+}
+
+.movie-container{
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    min-height: 100vh;
+    margin-top: 40px;
+    
+    
+}
+    
