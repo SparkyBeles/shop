@@ -1,0 +1,19 @@
+.movie-poster{
+    display: flex;
+    justify-content: center;
+}
+
+.movie-name{
+    display: flex;
+    justify-content: center;
+}
+
+.movie-price{
+    display: flex;
+    justify-content: center;
+}
+
+.buy-button{
+    display: flex;
+    justify-content: center;
+}
