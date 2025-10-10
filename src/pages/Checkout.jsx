@@ -18,7 +18,6 @@ function Checkout() {
         <>
             <Menu />
             <div className="checkout-container">
-                <h2>Checkout</h2>
 
                 <div className="checkout-summary">
                     <p><strong>Your cart:</strong> 4 items</p>
