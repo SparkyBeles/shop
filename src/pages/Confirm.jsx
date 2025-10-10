@@ -1,7 +1,5 @@
-import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import Menu from "../components/Menu";
-import "../css/Confirm.css"; 
+import "../css/Confirm.css";
 
 function Confirm() {
   const location = useLocation();
@@ -10,7 +8,6 @@ function Confirm() {
 
   return (
     <>
-      <Menu />
       <div className="confirm-container">
         <h1>Tack för din beställning!</h1>
         <p>Din order har bekräftats.</p>
@@ -18,15 +15,12 @@ function Confirm() {
           Ordernummer: <strong>{orderNumber}</strong>
         </h2>
 
-
         <Link to="/" className="confirm-button">
           Tillbaka till startsidan
         </Link>
       </div>
     </>
   );
-
 }
 
 export default Confirm;
-
