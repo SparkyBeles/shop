@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
+import SideMenu from "../components/SideMenu";
+
 import MovieListCard from "../components/MovieListCard";
 import { Link } from "react-router";
+
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
 function Home() {
   const [items, setItems] = useState([]);
+
+  const [sideMenuOpen, setSideMenuOpen] = useState(false);
+
+  const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
   useEffect(() => {
     (async () => {
@@ -17,7 +24,18 @@ function Home() {
   }, []);
 
   return (
-      <section className="movie-grid">
+
+    <section>
+      <Menu />
+      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} />
+
+      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
+
+      <section className="movie-container" />
+        <div className="movie-grid" />
+
+      <section className="movie-grid"/>
+
           {items.map((item) => (
             <Link to= {{
               pathname: "/details",
@@ -35,4 +53,5 @@ function Home() {
       </section>
   );
 }
+
 export default Home;
