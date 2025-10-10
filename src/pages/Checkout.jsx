@@ -6,7 +6,7 @@ function Checkout() {
     const navigate = useNavigate();
 
     const handleCancel = () => {
-        navigate("/cart"); //tillbaka till varukorgen
+        navigate("/cart");
     };
 
     const handlePurchase = (e) => {
