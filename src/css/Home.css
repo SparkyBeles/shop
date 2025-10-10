@@ -104,3 +104,17 @@ button.add_to_cart {
     margin: 0.5rem;
 }
     
+
+.searchBar{
+    display: grid;
+    justify-content: center;
+    
+}
+
+.search-input{
+    width: 900px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    font-size: 30px;
+}
+
