@@ -26,15 +26,11 @@ function Home() {
   return (
 
     <section>
-      <Menu />
       <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
-      <section className="movie-container" />
-        <div className="movie-grid" />
-
-      <section className="movie-grid"/>
+      <section className="movie-grid">
 
           {items.map((item) => (
             <Link to= {{
@@ -50,7 +46,9 @@ function Home() {
               />
             </Link>
           ))}
+          </section>
       </section>
+    
   );
 }
 
