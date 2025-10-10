@@ -15,7 +15,6 @@ function Home() {
   const [items, setItems] = useState([]);
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
 
   const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
@@ -38,10 +37,8 @@ function Home() {
   useEffect(() => {
     if (!search || search.trim() === "") {
       (async () => {
-        setIsSearching(true);
         const data = await tmdbAPI();
         setItems(data ?? []);
-        setIsSearching(false);
       })();
       return;
     }
@@ -51,10 +48,8 @@ function Home() {
     //========================================
 
     (async () => {
-      setIsSearching(true);
       const results = await searchApi(search);
       setItems(results);
-      setIsSearching(false);
     })();
   }, [search]);
 
@@ -77,9 +72,8 @@ function Home() {
             onChange={(e) => setSearch(e.target.value)}
             className="search-input"
           />
-
         </div>
-        </section>
+      </section>
 
       <section className="movie-grid">
         {items.map((item) => (
