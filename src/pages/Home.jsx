@@ -1,10 +1,11 @@
-import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
-import MovieCard from "../components/MovieCard";
+import MovieListCard from "../components/MovieListCard";
+import { Link } from "react-router";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
+
 function Home() {
   const [items, setItems] = useState([]);
 
@@ -16,22 +17,22 @@ function Home() {
   }, []);
 
   return (
-    <section>
-      <Menu />
-
-      <section className="movie-container">
-        <div className="movie-grid">
+      <section className="movie-grid">
           {items.map((item) => (
-            <MovieCard
+            <Link to= {{
+              pathname: "/details",
+              state: { id: item.id }
+              }}
+              >
+            <MovieListCard
               key={`${item.type}-${item.id}`}
               poster={item.poster ? `${ImgBase}${item.poster}` : ""}
               title={item.title}
               price={Math.floor(Math.random() * 250) + 50}
-            />
+              />
+            </Link>
           ))}
-        </div>
       </section>
-    </section>
   );
 }
 export default Home;
