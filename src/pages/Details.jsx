@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Menu from "../components/Menu";
 import "../css/Details.css";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 function Details() {
   const navigate = useNavigate();
@@ -10,13 +10,22 @@ function Details() {
     navigate("/Checkout");
   };
 
-  const [movie, setMovie] = useState();
+  //const [movie, setMovie] = useState();
   const [isZoomed, setIsZoomed] = useState(false);
 
   const zooming = () => {
     setIsZoomed(!isZoomed);
   };
 
+
+  const location = useLocation();
+  const { item } = location.state || {};
+
+  if(!item) {
+    return <div> No movie.........</div>
+
+  }
+/*
   const APIKey = import.meta.env.VITE_API_KEY;
   const apiURL = `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&query=Up`;
 
@@ -32,18 +41,18 @@ function Details() {
     fetchMovie();
     console.log("Fetch work...");
   }, [apiURL]);
-
+*/
   return (
     <div className="full-screen">
       
 
       <div className="movie">
-        {movie ? (
+        {item ? (
           <>
             <div className="movie-poster">
-              {movie.poster_path && (
+              {item.poster_path && (
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                   onClick={zooming}
                 />
               )}
@@ -51,9 +60,9 @@ function Details() {
 
             <div className="movie-info">
               <h1>
-                {movie.title} ({movie.release_date?.slice(0, 4)}){" "}
+                {item.title} ({item.release_date?.slice(0, 4)}){" "}
               </h1>
-              <p>{movie.overview?.slice(0, 400)} </p>
+              <p>{item.overview?.slice(0, 400)} </p>
 
               <h2> €29</h2>
 
@@ -75,7 +84,7 @@ function Details() {
       {isZoomed && (
         <div className="overlay" onClick={zooming}>
           <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
             className="zoomed-img"
           />
         </div>
