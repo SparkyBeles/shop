@@ -6,6 +6,8 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
     <>
       <div className={`side-menu ${isOpen ? "open" : ""}`}>
         <nav>
+          <button id="close-btn" onClick={toggleSideMenu}>X</button>
+
           <NavLink
             to="/Details"
             onclick={toggleSideMenu}

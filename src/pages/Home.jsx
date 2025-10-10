@@ -12,8 +12,7 @@ function Home() {
 
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
 
-  const toggleSideMenu = () => setSideMenuOpen(prev => !prev);
-
+  const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
   useEffect(() => {
     (async () => {
@@ -24,8 +23,10 @@ function Home() {
 
   return (
     <section>
-      <Menu toggleSideMenu= { toggleSideMenu }/>
-      <SideMenu isOpen = { sideMenuOpen } toggleSideMenu= { toggleSideMenu }/>
+      <Menu />
+      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} />
+
+      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
       <section className="movie-container">
         <div className="movie-grid">
