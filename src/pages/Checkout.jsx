@@ -16,7 +16,7 @@ function Checkout() {
   return (
     <>
       <h2>Checkout</h2>
-      <Menu />
+      
       <button onClick={handleCheckout}>Slutför köp</button>
     </>
   );
