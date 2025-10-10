@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
-
-import MovieCard from "../components/MovieCard";
 import SideMenu from "../components/SideMenu";
 
 import MovieListCard from "../components/MovieListCard";
@@ -33,10 +31,10 @@ function Home() {
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
-      <section className="movie-container">
-        <div className="movie-grid">
+      <section className="movie-container" />
+        <div className="movie-grid" />
 
-      <section className="movie-grid">
+      <section className="movie-grid"/>
 
           {items.map((item) => (
             <Link to= {{
@@ -55,4 +53,5 @@ function Home() {
       </section>
   );
 }
+
 export default Home;
