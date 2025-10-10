@@ -35,7 +35,7 @@ function Details() {
 
   return (
     <div className="full-screen">
-      <Menu></Menu>
+      
 
       <div className="movie">
         {movie ? (

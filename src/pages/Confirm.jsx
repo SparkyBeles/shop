@@ -18,12 +18,14 @@ function Confirm() {
           Ordernummer: <strong>{orderNumber}</strong>
         </h2>
 
+
         <Link to="/" className="confirm-button">
           Tillbaka till startsidan
         </Link>
       </div>
     </>
   );
+
 }
 
 export default Confirm;

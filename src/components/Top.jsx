@@ -1,15 +1,19 @@
 import { Link } from "react-router";
 
-const Header = () => {
+const Header = ({onCartClick}) => {
 
 
     return (
         <section className="header">
             
             <span id="logo">Movieshop</span>
-            <Link to="/cart">
-            <img className="cart_icon" src="src/assets/cart.png"></img>
-            </Link>
+            
+            <img className="cart_icon"
+             src="src/assets/cart.png"
+             onClick={onCartClick}
+             
+             ></img>
+           
         </section>
     )
 }

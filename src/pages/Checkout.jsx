@@ -8,6 +8,7 @@ function Checkout() {
     // Generera slumpmässigt ordernummer (6 siffror)
     const orderNumber = Math.floor(100000 + Math.random() * 900000);
 
+
     // Navigera till Confirm-sidan och skicka med ordernumret
     navigate('/confirm', { state: { orderNumber } });
   };
@@ -19,6 +20,7 @@ function Checkout() {
       <button onClick={handleCheckout}>Slutför köp</button>
     </>
   );
+
 }
 
 export default Checkout;
