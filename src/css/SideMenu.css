@@ -1,0 +1,80 @@
+.side-menu {
+    position: fixed;
+    left: -14rem;
+    background-color: rgb(247, 250, 250);
+    transition: left 0.3s ease;
+    width: 13rem;
+    height: 80vh;
+    margin-left: 0.75rem;
+    border-radius: 0.25rem;
+    border: rgb(121, 205, 216) solid 2px;
+    
+}
+
+
+#close-btn {
+    width: 1.5rem;
+    margin-bottom: 1rem;
+    border: rgb(121, 205, 216) solid 2px;
+    border-radius: 5rem;
+    background-color:rgb(247, 250, 250);
+    
+}
+
+#close-btn:hover {
+    background-color: rgb(219, 22, 45);
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu nav {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    
+}
+
+.nav-button {
+    padding: 0.25rem;
+}
+
+.nav-button:hover {
+    text-decoration: underline;
+
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+.nav-button-category {
+    border: rgb(121, 205, 216) solid 2px;
+    border-radius: 5rem;
+    margin: 0.1rem;
+    padding: 0.2rem;
+}
+
+.nav-button-category:hover {
+    background-color: rgb(124, 161, 171);
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    border: rgb(121, 205, 216) solid 1px;
+    margin-top: 1rem;
+    padding: 0.25rem;
+}
+
+.about-button {
+    padding: 0.25rem;
+}
+
+.about-button:hover {
+    text-decoration: underline;
+}
