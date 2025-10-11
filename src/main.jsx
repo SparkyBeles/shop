@@ -10,7 +10,7 @@ import Confirm from './pages/Confirm.jsx';
 import Checkout from './pages/Checkout.jsx';
 import Details from './pages/Details.jsx';
 import Layout from './pages/Layout.jsx';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 const store = configureStore({
