@@ -10,6 +10,7 @@ import Confirm from './pages/Confirm.jsx';
 import Checkout from './pages/Checkout.jsx';
 import Details from './pages/Details.jsx';
 import Layout from './pages/Layout.jsx';
+import { Analytics } from "@vercel/analytics/next"
 
 
 const store = configureStore({
@@ -51,6 +52,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store = {store}>
       <RouterProvider router={router} />
+      <Analytics/>
     </Provider>
   </StrictMode>,
 )
