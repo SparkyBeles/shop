@@ -20,7 +20,12 @@ function MovieListCard({id, poster, title, price}) {
                     <span className="movie_grid_price">{price} kr</span>
                 </div>
             <div className="movie_list_buttons">
-            <button className="add_to_cart" onClick={addToCart}>
+            <button className="add_to_cart" onClick={(e) => 
+                {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    addToCart();
+                }}>
                 <img className="cart_button" src="src/assets/cart.png"></img>
             </button>
             <Link to="/checkout">

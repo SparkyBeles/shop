@@ -21,6 +21,10 @@ function Sidebar({ open, onClose, children }) {
     return sum;
   }
 
+  function removeItem(cart) {
+    
+  }
+
 
   const cart = useSelector((state) => state.cart.value);
 
@@ -35,20 +39,24 @@ function Sidebar({ open, onClose, children }) {
       
 
       {cart.map((cartItem, index) => (
-        <div className="moviedetails-sidebar" key={index}>
+        <div className="cart-item-sidebar">
+          <div className="moviedetails-sidebar" key={index}>
+          <button className="remove" onClick={removeItem}>–</button>
           <img src={cartItem.poster}/>
           <span className="cart-item-title">{cartItem.title}</span>
-          <span className="cart-item-price">{cartItem.price} kr</span>
           </div>
+          <span className="cart-item-price">{cartItem.price} kr</span>
+        </div>
       ))}
 
-      <div className="cart-total"><span>Total:</span> {cartTotal(cart)} kr
+      <div className="cart-total"><b>Total:&nbsp;</b> {cartTotal(cart)} kr
             <Link to= {{
               pathname: '/checkout',
               state: { sum: cartTotal(cart) }
               }}>
             <button className="buy_now">
-                <img className="cart_button" src="src/assets/coins.png"></img>
+              Checkout
+                {/* <img className="cart_button" src="src/assets/coins.png"></img> */}
                  </button>
             </Link>
       </div>
