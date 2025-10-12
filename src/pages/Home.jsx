@@ -8,6 +8,13 @@ import searchApi from "../api/searchApi";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
+/**
+ * Render the home page containing a side menu, a search bar, and a grid of movie/series items.
+ *
+ * Fetches initial items on mount and updates the displayed list based on the search input.
+ *
+ * @returns {JSX.Element} The rendered Home section with interactive side menu, live search, and item links.
+ */
 function Home() {
   // ======================================================
   //    STATES

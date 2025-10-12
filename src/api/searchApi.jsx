@@ -1,3 +1,11 @@
+/**
+ * Perform a TMDB multi-type search and return a simplified list of results.
+ *
+ * If the first search result is a person, returns that person's combined movie and TV cast credits;
+ * otherwise returns the non-person search results mapped to a uniform structure.
+ * @param {string} search - The search query string.
+ * @returns {Array<{type: "movie" | "series", id: number, title: string|undefined, poster: string|undefined}>} An array of simplified result objects where `type` is "movie" or "series", `id` is the TMDB id, `title` is the movie title or series name (may be undefined), and `poster` is the poster path (may be undefined). 
+ */
 async function searchApi(search) {
     
     const apiKey = import.meta.env.VITE_API_KEY;

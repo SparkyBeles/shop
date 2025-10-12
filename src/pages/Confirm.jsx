@@ -1,6 +1,14 @@
 import { useLocation, Link } from "react-router-dom";
 import "../css/Confirm.css";
 
+/**
+ * Render a confirmation page showing a Swedish order confirmation and an order number.
+ *
+ * The component reads an `orderNumber` from location.state if present; otherwise it
+ * generates a six-digit fallback number between 100000 and 999999.
+ *
+ * @returns {JSX.Element} The confirmation UI containing the order number and a link back to the home page.
+ */
 function Confirm() {
   const location = useLocation();
   const orderNumber =
