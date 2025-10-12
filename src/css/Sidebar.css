@@ -26,3 +26,45 @@
 .close-btn{
   color: red;
 }
+
+.moviedetails-sidebar {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+font-size: .75rem;
+border-bottom: .5px solid grey;
+padding-bottom: 1rem;
+margin-bottom: 1rem;
+}
+
+.moviedetails-sidebar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.cart-item-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.cart-item-price {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.cart-total button {
+  margin-left: 1rem;
+}
