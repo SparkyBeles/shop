@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { add, toggle } from "../features/CartSlice";
-import { useState } from "react";
 
 function MovieListCard({id, poster, title, price}) {
 
