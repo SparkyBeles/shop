@@ -76,6 +76,7 @@ function Home() {
         </div>
       </section>
 
+<section className="movie-grid">
 
           {items.map((item) => (
             <Link 
@@ -94,7 +95,9 @@ function Home() {
             />
           </Link>
         ))}
-      
+
+</section>
+
     
     </section>
   );
