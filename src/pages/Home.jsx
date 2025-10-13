@@ -94,7 +94,8 @@ function Home() {
             />
           </Link>
         ))}
-      </section>
+      
+    
     </section>
   );
 }
