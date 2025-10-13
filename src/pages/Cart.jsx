@@ -21,7 +21,7 @@ function Cart() {
               {cart.map((cartItem, index) => (
                   <div className="cart-item-sidebar">
           <div className="moviedetails-sidebar" key={index}>
-          <button className="remove" onClick={removeItem}>–</button>
+          <button className="remove">–</button>
           <img src={cartItem.poster}/>
           <span className="cart-item-title">{cartItem.title}</span>
           </div>
