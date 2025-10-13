@@ -33,10 +33,11 @@ function Home() {
       <section className="movie-grid">
 
           {items.map((item) => (
-            <Link to= {{
-              pathname: "/details",
-              state: { id: item.id }
-              }}
+            <Link 
+            key={item.id}
+              to= "/details"
+              state= {{ item}}
+              
               >
             <MovieListCard
               key={`${item.type}-${item.id}`}
