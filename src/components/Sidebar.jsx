@@ -13,8 +13,6 @@ function Sidebar({ open, onClose, children }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const cart = useSelector((state) => state.cart.value);
-
   return (
     <div
       className={`sidebar ${open ? "is-open" : ""}`}
