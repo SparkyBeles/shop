@@ -10,19 +10,19 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
           <NavLink
             to="/Details"
-            onclick={toggleSideMenu}
+            onClick={toggleSideMenu}
             className={"nav-button"}
           >
             Details
           </NavLink>
 
-          <NavLink to="/Cart" onclick={toggleSideMenu} className={"nav-button"}>
+          <NavLink to="/Cart" onClick={toggleSideMenu} className={"nav-button"}>
             Cart
           </NavLink>
 
           <NavLink
             to="/Checkout"
-            onclick={toggleSideMenu}
+            onClick={toggleSideMenu}
             className={"nav-button"}
           >
             Checkout
@@ -30,7 +30,7 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
           <NavLink
             to="/Confirm"
-            onclick={toggleSideMenu}
+            onClick={toggleSideMenu}
             className={"nav-button"}
           >
             Confirm
@@ -39,63 +39,63 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
           <div className="category-container">
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Action
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Adventure
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Animation
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Comedy
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Crime
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Documentary
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Drama
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Family
             </NavLink>
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Fantasy
@@ -103,7 +103,7 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               History
@@ -111,7 +111,7 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Horror
@@ -119,7 +119,7 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Musicals
@@ -127,7 +127,7 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
 
             <NavLink
               to="/Details"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"nav-button-category"}
             >
               Romance
@@ -137,28 +137,28 @@ const SideMenu = ({ isOpen, toggleSideMenu }) => {
           <div className="about-container">
             <NavLink
               to="/Checkout"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"about-button"}
             >
               About
             </NavLink>
             <NavLink
               to="/Checkout"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"about-button"}
             >
               FAQ
             </NavLink>
             <NavLink
               to="/Checkout"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"about-button"}
             >
               Contact
             </NavLink>
             <NavLink
               to="/Checkout"
-              onclick={toggleSideMenu}
+              onClick={toggleSideMenu}
               className={"about-button"}
             ></NavLink>
           </div>

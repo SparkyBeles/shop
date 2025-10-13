@@ -13,6 +13,7 @@ function Home() {
   //    STATES
   // ======================================================
   const [items, setItems] = useState([]);
+
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -75,15 +76,17 @@ function Home() {
         </div>
       </section>
 
-      <section className="movie-grid">
-        {items.map((item) => (
-          <Link
-            to={{
-              pathname: "/details",
-              state: { id: item.id },
-            }}
-          >
+
+          {items.map((item) => (
+            <Link 
+            key={item.id}
+              to= "/details"
+              state= {{ item}}
+              
+              >
+
             <MovieListCard
+              id={item.id}
               key={`${item.type}-${item.id}`}
               poster={item.poster ? `${ImgBase}${item.poster}` : ""}
               title={item.title}

@@ -91,6 +91,10 @@ button.add_to_cart {
     border-radius: 100px;
 }
 
+.add_to_cart:focus {
+    background-color: rgb(167, 255, 167);
+}
+
 #logo {
     font-family: Modak;
     font-weight: 300;
