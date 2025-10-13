@@ -15,10 +15,6 @@ function Cart() {
         return sum;
     }
 
-  function removeItem(cart) {
-    // ta bort en vara
-  }
-
     return (
         <div><h2>Cart Items:</h2>
        
