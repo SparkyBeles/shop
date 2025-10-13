@@ -62,34 +62,28 @@ const SideMenu = ({ isOpen, toggleSideMenu, onGenreSelect }) => {
 
           </div>
 
-
           <div className="about-container">
             <NavLink
-              to="/Checkout"
+              to="/"
               onClick={toggleSideMenu}
-              className={"about-button"}
+              className={"nav-button"}
             >
               About
             </NavLink>
             <NavLink
-              to="/Checkout"
+              to="/"
               onClick={toggleSideMenu}
-              className={"about-button"}
+              className={"nav-button"}
             >
               FAQ
             </NavLink>
             <NavLink
-              to="/Checkout"
+              to="/"
               onClick={toggleSideMenu}
-              className={"about-button"}
+              className={"nav-button"}
             >
               Contact
             </NavLink>
-            <NavLink
-              to="/Checkout"
-              onClick={toggleSideMenu}
-              className={"about-button"}
-            ></NavLink>
           </div>
         </nav>
       </div>

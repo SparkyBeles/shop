@@ -16,10 +16,10 @@ async function genreAPI(mediaType, genreId) {
         ...item, 
         type: mediaType,
         id: item.id, 
-        title: item.title,
+        title: item.title ? item.title : item.name,
         poster: item.poster_path,
     }))
-    
+
 } catch (error) {
     console.error(error)
     return [];

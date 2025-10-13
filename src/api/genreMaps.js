@@ -28,6 +28,6 @@ export const movieGenreList = {
     Mystery: 9648,
     News: 10763,
     Reality: 10764,
-    SciFiFantasy: 10765,
+    Fantasy: 10765,
     Soap: 10766,
   };
