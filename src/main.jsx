@@ -10,6 +10,8 @@ import Confirm from './pages/Confirm.jsx';
 import Checkout from './pages/Checkout.jsx';
 import Details from './pages/Details.jsx';
 import Layout from './pages/Layout.jsx';
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 const store = configureStore({
@@ -51,6 +53,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store = {store}>
       <RouterProvider router={router} />
+      <Analytics/>
+      <SpeedInsights/>
     </Provider>
   </StrictMode>,
 )
