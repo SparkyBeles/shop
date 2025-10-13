@@ -20,5 +20,4 @@ jobs:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          #AI model
           OPENAI_MODEL: gpt-4o-mini
