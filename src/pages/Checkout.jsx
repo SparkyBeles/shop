@@ -19,7 +19,7 @@ function Checkout() {
 
     return (
         <>
-            <Menu />
+          
             <div className="checkout-container">
 
                 <div className="checkout-summary">

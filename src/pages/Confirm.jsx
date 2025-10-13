@@ -10,7 +10,7 @@ function Confirm() {
 
   return (
     <>
-      <Menu />
+      
       <div className="confirm-container">
         <h1>Tack för din beställning!</h1>
         <p>Din order har bekräftats.</p>
