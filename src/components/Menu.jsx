@@ -3,8 +3,10 @@ import "../css/Menu.css";
 
 function Menu() {
 
+
     return (
         <div className="menu">
+
             <Link to="/">
             <h2>Home</h2>
             </Link>

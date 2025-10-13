@@ -1,8 +1,11 @@
-import { useNavigate } from "react-router";
+
+import { useNavigate } from 'react-router-dom';
+
 import Menu from "../components/Menu";
 import "../css/Checkout.css";
 
 function Checkout() {
+
     const navigate = useNavigate();
 
     const handleCancel = () => {
@@ -70,6 +73,7 @@ function Checkout() {
             </div> 
         </>           
     );
+
 }
 
 export default Checkout;

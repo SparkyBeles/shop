@@ -1,13 +1,13 @@
-import Menu from "../components/Menu";
+import "../css/Cart.css"
 
 function Cart() {
 
 
     return (
-        <>
-        <h2>Cart</h2>
-        <Menu></Menu>
-        </>
+        <div className="cart-container"> <h2>Cart Items:</h2></div>
+       
+        
+        
     )
 }
 
