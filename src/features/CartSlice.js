@@ -14,13 +14,11 @@ const cartSlice = createSlice ({
         add : (state, action) => {
             state.value.push(action.payload) 
         },
-        remove : (state) => {
-            state.value.pop()
+        remove : (state, action) => {
+            state.value = state.value.filter(item => item.id !== action.payload);
         }
     }
 })
 
-export const {add} = cartSlice.actions;
-export const {remove} = cartSlice.actions;
-
+export const { add, remove } = cartSlice.actions;
 export default cartSlice.reducer; 
