@@ -4,12 +4,12 @@
 } */
 
 .moviedetails-sidebar {
-display: flex;
-flex-direction: row;
-justify-content: start;
-gap: 1rem;
-align-items: center;
-font-size: .75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.75rem;
 }
 
 .cart-item-sidebar {
@@ -17,11 +17,10 @@ font-size: .75rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: .5px solid grey;
+  border-bottom: 0.5px solid grey;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  
-} 
+}
 
 .moviedetails-sidebar img {
   width: 50px;
@@ -55,16 +54,16 @@ font-size: .75rem;
 }
 
 .remove {
-    background-color: rgb(225, 225, 225);
-    padding: 10px;
-    margin-right: 2px;
-    border: 0px;
-    border-radius: 100px;
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  margin-right: 2px;
+  border: 0px;
+  border-radius: 100px;
 }
 
 img.remove_button {
-    width: 20px;
-    height: 20px;
-    object-fit: scale-down;
-    float: center;
+  width: 20px;
+  height: 20px;
+  object-fit: scale-down;
+  float: center;
 }

@@ -1,62 +1,62 @@
 .checkout-container {
-    background-color: #eaf9ff;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem;
-    font-size: 1.5rem;
+  background-color: #eaf9ff;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  font-size: 1.5rem;
 }
 
 .checkout-summary {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .checkout-form {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 1.5rem;
-    align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  align-items: center;
 }
 
 .checkout-form input,
 .checkout-form select {
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .checkout-form .row {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .checkout-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .cancel-btn,
 .purchase-btn {
-    background-color: #9cf4ff;
-    border: none;
-    padding: 0.5rem 3rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
+  background-color: #9cf4ff;
+  border: none;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .cancel-btn:hover {

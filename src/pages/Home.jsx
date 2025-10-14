@@ -22,16 +22,19 @@ function Home() {
   const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
   const handleGenreSelect = async (mediaType, genreName) => {
-    const genreId = mediaType === "movie" ? movieGenreList[genreName] : tvGenreList[genreName];
-    
-    if(!genreId) return;
+    const genreId =
+      mediaType === "movie"
+        ? movieGenreList[genreName]
+        : tvGenreList[genreName];
+
+    if (!genreId) return;
 
     const results = await genreAPI(mediaType, genreId);
     setItems(results ?? []);
-  }
+  };
 
   // =======================================
-  // Initial Data Load 
+  // Initial Data Load
   //========================================
 
   useEffect(() => {
@@ -41,11 +44,7 @@ function Home() {
     })();
   }, []);
 
-  // =======================================
-  // EFFECTS
-  //========================================
-
-  // live search
+  // search
   useEffect(() => {
     if (!search || search.trim() === "") {
       (async () => {
@@ -54,12 +53,6 @@ function Home() {
       })();
       return;
     }
-
-
-
-    // ======================================
-    // FUNCTION
-    //=======================================
 
     (async () => {
       const results = await searchApi(search);
@@ -73,7 +66,11 @@ function Home() {
 
   return (
     <section>
-      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} onGenreSelect={handleGenreSelect} />
+      <SideMenu
+        isOpen={sideMenuOpen}
+        toggleSideMenu={toggleSideMenu}
+        onGenreSelect={handleGenreSelect}
+      />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
@@ -89,16 +86,9 @@ function Home() {
         </div>
       </section>
 
-<section className="movie-grid">
-
-          {items.map((item) => (
-            <Link 
-            key={item.id}
-              to= "/details"
-              state= {{ item}}
-              
-              >
-
+      <section className="movie-grid">
+        {items.map((item) => (
+          <Link key={item.id} to="/details" state={{ item }}>
             <MovieListCard
               id={item.id}
               key={`${item.type}-${item.id}`}
@@ -108,10 +98,7 @@ function Home() {
             />
           </Link>
         ))}
-
-</section>
-
-    
+      </section>
     </section>
   );
 }

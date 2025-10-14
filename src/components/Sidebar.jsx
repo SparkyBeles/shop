@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import "../css/Sidebar.css";
-import { Link } from "react-router";
 
 function Sidebar({ open, onClose, children }) {
   useEffect(() => {
@@ -13,17 +12,13 @@ function Sidebar({ open, onClose, children }) {
   }, [open, onClose]);
 
   return (
-    <div
-      className={`sidebar ${open ? "is-open" : ""}`}
-      aria-hidden={!open}
-    >
-
-      <button className="close-btn" onClick={onClose}> x </button>
+    <div className={`sidebar ${open ? "is-open" : ""}`} aria-hidden={!open}>
+      <button className="close-btn" onClick={onClose}>
+        {" "}
+        x{" "}
+      </button>
       {children}
-      
-
-
-      </div>
+    </div>
   );
 }
 

@@ -1,12 +1,10 @@
-
-
 body {
-    background-color: #aaf7ff;
-    font-family: "Inter", sans-serif;
+  background-color: #aaf7ff;
+  font-family: "Inter", sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:link {
@@ -26,26 +24,26 @@ a:active {
 }
 
 main > * {
-    height: 100vh;
-    overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 img.poster_grid {
-    width: 100%;
-    height: auto;
-    margin-bottom: 5px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
 }
 
 img.cart_button {
-    width: 20px;
-    height: 20px;
-    object-fit: scale-down;
-    float: center;
+  width: 20px;
+  height: 20px;
+  object-fit: scale-down;
+  float: center;
 }
 
 img.cart_icon {
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 section.grid {
@@ -59,17 +57,17 @@ section.grid {
 }
 
 section.header {
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 div.movie_list_card {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
@@ -77,71 +75,68 @@ div.movie_list_card {
 }
 
 div.movie_card_details {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 div.movie_list_buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
 span.movie_grid_title {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 span.movie_grid_price {
-    color: red;
-    font-weight: 600;
+  color: red;
+  font-weight: 600;
 }
 
 button.buy_now {
-    background-color: rgb(225, 225, 225);
-    padding: 10px;
-    margin-left: 2px;
-    border: 0px;
-    border-radius: 100px;
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  margin-left: 2px;
+  border: 0px;
+  border-radius: 100px;
 }
 
 button.add_to_cart {
-    background-color: rgb(225, 225, 225);
-    padding: 10px;
-    margin-right: 2px;
-    border: 0px;
-    border-radius: 100px;
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  margin-right: 2px;
+  border: 0px;
+  border-radius: 100px;
 }
 
 .add_to_cart.added {
-    background-color: rgb(167, 255, 167);
+  background-color: rgb(167, 255, 167);
 }
 
 #logo {
-    font-family: Modak;
-    font-weight: 300;
-    font-size: 4rem;
+  font-family: Modak;
+  font-weight: 300;
+  font-size: 4rem;
 }
 
 .movie-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 0.5rem;
-}
-    
-
-.searchBar{
-    display: grid;
-    justify-content: center;
-    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0.5rem;
 }
 
-.search-input{
-    width: 900px;
-    padding: 40px 30px;
-    border-radius: 12px;
-    font-size: 30px;
+.searchBar {
+  display: grid;
+  justify-content: center;
 }
 
+.search-input {
+  width: 900px;
+  padding: 40px 30px;
+  border-radius: 12px;
+  font-size: 30px;
+}

@@ -19,17 +19,14 @@ function Details() {
   const location = useLocation();
   const { item } = location.state || {};
 
-  console.log(item)
+  console.log(item);
 
-  if(!item) {
-    return <div> No movie...</div>
-
+  if (!item) {
+    return <div> No movie...</div>;
   }
 
   return (
     <div className="full-screen">
-      
-
       <div className="movie">
         {item ? (
           <>
@@ -44,9 +41,14 @@ function Details() {
 
             <div className="movie-info">
               <h1>
-                {item.title || "No title available"} ({item.release_date?.slice(0, 4) || item.first_air_date?.slice(0, 4)}){" "}
+                {item.title || "No title available"} (
+                {item.release_date?.slice(0, 4) ||
+                  item.first_air_date?.slice(0, 4)}
+                ){" "}
               </h1>
-              <p>{item.overview?.slice(0, 400) || "No description available" } </p>
+              <p>
+                {item.overview?.slice(0, 400) || "No description available"}{" "}
+              </p>
 
               <h2> Price: €29</h2>
 
