@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { add, toggle, remove } from "../features/CartSlice";
 import { useEffect } from "react";
 import Quantity from "./Quantity";
+import { useNavigate } from "react-router";
 
 function Buttons({id, poster, title, price}) {
     
       const dispatch = useDispatch();
+      const navigate = useNavigate();
 
 const isAdded = useSelector((state) => state.cart.items[id] || false);
 
@@ -24,7 +26,7 @@ const isAdded = useSelector((state) => state.cart.items[id] || false);
 
       const removeItem = (id) => {
         dispatch(remove(id));
-        dispatch(toggle(id));
+        // dispatch(toggle(id));
       }
 
 

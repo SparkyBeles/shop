@@ -75,6 +75,14 @@ section.header {
     justify-content: space-between;
     align-items: center;
 }
+section.cart-plus-total {
+    margin: 5px;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 div.movie_list_card {
   display: flex;
