@@ -1,8 +1,6 @@
-import { useSelector } from "react-redux";
 import Buttons from "./Buttons";
-import Quantity from "./Quantity";
 
-function MovieListCard({id, poster, title, price, quantity}) {
+function MovieListCard({id, poster, title, price}) {
 
     return (
         <>

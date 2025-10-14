@@ -23,6 +23,7 @@ function Cart() {
               className="remove" 
               onClick={() => {
                 dispatch(remove(cartItem.id));
+                dispatch(toggle(cartItem.id));
               }}
             >
               –
