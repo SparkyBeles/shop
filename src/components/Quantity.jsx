@@ -13,15 +13,10 @@ function Quantity({id}) {
 
     function increaseAmount (id) {
         dispatch(increaseQuantity(id));
-        console.log("increase");
     }
     function decreaseAmount (id) {
         dispatch(decreaseQuantity(id))
-    console.log("decrease");
     }
-
-
-console.log(itemAmount)
 
     return (
         <div className="quantity">
