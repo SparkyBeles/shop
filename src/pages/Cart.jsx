@@ -21,7 +21,9 @@ function Cart() {
           <div className="moviedetails-sidebar">
             <button 
               className="remove" 
-              onClick={() => dispatch(remove(cartItem.id))}
+              onClick={() => {
+                dispatch(remove(cartItem.id));
+              }}
             >
               –
             </button>

@@ -105,6 +105,7 @@ function Home() {
               poster={item.poster ? `${ImgBase}${item.poster}` : ""}
               title={item.title}
               price={Math.floor(Math.random() * 250) + 50}
+              quantity={item.quantity}
             />
           </Link>
         ))}

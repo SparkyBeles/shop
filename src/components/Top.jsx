@@ -13,6 +13,8 @@ const Header = ({onCartClick}) => {
              onClick={onCartClick}
              
              ></img>
+
+             
            
         </section>
     )
