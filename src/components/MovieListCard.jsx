@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import Buttons from "./Buttons";
+import Quantity from "./Quantity";
 
 function MovieListCard({id, poster, title, price, quantity}) {
-console.log(quantity)
+
     return (
         <>
         <div className="movie_list_card">
@@ -10,7 +12,6 @@ console.log(quantity)
                     <span className="movie_grid_title">{title}</span>
                     <span className="movie_grid_price">{price} kr</span>
                 </div>
-<span>{quantity}</span>
         <Buttons id={id} poster={poster} title={title} price={price}></Buttons>
         </div>
         </>

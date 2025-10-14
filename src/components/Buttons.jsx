@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { add, toggle, remove } from "../features/CartSlice";
 import { useEffect } from "react";
+import Quantity from "./Quantity";
 
 function Buttons({id, poster, title, price}) {
     
@@ -39,6 +40,8 @@ return (
             }}>
               <img className="cart_button" src="/cart.png"/>
               </button>
+
+            <Quantity id={id}></Quantity>
 
             <button className={isAdded ? 'remove' : 'button_hidden'} onClick={(e) => 
             {

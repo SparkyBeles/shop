@@ -86,6 +86,7 @@ div.movie_list_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
 }
 
@@ -96,6 +97,15 @@ span.movie_grid_title {
 span.movie_grid_price {
     color: red;
     font-weight: 600;
+}
+
+.amount {
+    color: grey;
+    font-weight: 400;
+}
+
+.amount_hidden {
+    display: none;
 }
 
 button.buy_now {

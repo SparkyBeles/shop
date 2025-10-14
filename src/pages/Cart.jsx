@@ -27,6 +27,7 @@ function Cart() {
             >
               –
             </button>
+            <span className="cart-item-title">{cartItem.quantity}</span>
             <img src={cartItem.poster} />
             <span className="cart-item-title">{cartItem.title}</span>
 
