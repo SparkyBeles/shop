@@ -7,10 +7,10 @@ async function genreAPI(mediaType, genreId) {
    
     const genreUrl = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${apiKey}&with_genres=${genreId}&language=en-US&page=1`
 
-    const result = await fetch(genreUrl);
-    if (!result.ok) throw new Error(`Error fetching ${mediaType} by genre: ${result.status}`);
+    const response = await fetch(genreUrl);
+    if (!response.ok) throw new Error(`Error fetching ${mediaType} by genre: ${response.status}`);
 
-    const data = await result.json();
+    const data = await response.json();
 
     return (data.results ?? []).map(item => ({
         ...item, 
