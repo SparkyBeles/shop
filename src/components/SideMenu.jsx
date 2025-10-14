@@ -30,7 +30,7 @@ const SideMenu = ({ isOpen, toggleSideMenu, onGenreSelect }) => {
             Checkout
           </NavLink>
 
-          <div className="category-conatiner">
+          <div>
             <h3>Movies</h3>
 
             {Object.keys(movieGenreList).map((category) => (
