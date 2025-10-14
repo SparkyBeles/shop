@@ -66,3 +66,9 @@
 .purchase-btn:hover {
   background-color: #4fe5ff;
 }
+
+.load-ani {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+}
