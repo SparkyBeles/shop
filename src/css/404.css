@@ -1,16 +1,12 @@
-
-
-.NotFound-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    
+.NotFound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
-.back-button{
-    cursor: pointer;
-    
+.back-button {
+  cursor: pointer;
 }
