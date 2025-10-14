@@ -7,6 +7,7 @@
   const movieUrl  = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-SE&page=1`;
   const seriesUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-SE&page=1`;
 
+
   try {
     const [movieRes, seriesRes] = await Promise.all([ fetch(movieUrl), fetch(seriesUrl) ]);
 

@@ -1,28 +1,30 @@
 .side-menu {
-    position: fixed;
+    position:absolute;
     left: -14rem;
     background-color: rgb(247, 250, 250);
     transition: left 0.3s ease;
     width: 13rem;
-    height: 80vh;
+    height: 85vh;
     margin-left: 0.75rem;
     border-radius: 0.25rem;
     border: rgb(121, 205, 216) solid 2px;
     
 }
 
-
 #close-btn {
+    position: absolute;
+    left: 11rem;
+    top: 0.5rem;
     width: 1.5rem;
     margin-bottom: 1rem;
-    border: rgb(121, 205, 216) solid 2px;
     border-radius: 5rem;
     background-color:rgb(247, 250, 250);
-    
+    border: white;
+    font-size: 1rem;
 }
 
 #close-btn:hover {
-    background-color: rgb(219, 22, 45);
+    color: red;
 }
 
 .side-menu.open {
@@ -53,14 +55,17 @@
 }
 
 .nav-button-category {
-    border: rgb(121, 205, 216) solid 2px;
+    border: rgb(139, 198, 206) solid 2px;
+    background-color: rgb(171, 241, 241);
     border-radius: 5rem;
     margin: 0.1rem;
     padding: 0.2rem;
+    font-size: 0.80rem;
 }
 
 .nav-button-category:hover {
-    background-color: rgb(124, 161, 171);
+    background-color: rgb(25, 144, 176);
+    cursor: pointer;
 }
 
 .about-container {
@@ -69,12 +74,4 @@
     border: rgb(121, 205, 216) solid 1px;
     margin-top: 1rem;
     padding: 0.25rem;
-}
-
-.about-button {
-    padding: 0.25rem;
-}
-
-.about-button:hover {
-    text-decoration: underline;
 }

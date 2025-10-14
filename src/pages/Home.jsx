@@ -5,6 +5,8 @@ import SideMenu from "../components/SideMenu";
 import MovieListCard from "../components/MovieListCard";
 import { Link } from "react-router";
 import searchApi from "../api/searchApi";
+import { movieGenreList, tvGenreList } from "../api/genreMaps";
+import genreAPI from "../api/genreAPI";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
@@ -18,6 +20,15 @@ function Home() {
   const [search, setSearch] = useState("");
 
   const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
+
+  const handleGenreSelect = async (mediaType, genreName) => {
+    const genreId = mediaType === "movie" ? movieGenreList[genreName] : tvGenreList[genreName];
+    
+    if(!genreId) return;
+
+    const results = await genreAPI(mediaType, genreId);
+    setItems(results ?? []);
+  }
 
   // =======================================
   // API CALLS
@@ -44,6 +55,8 @@ function Home() {
       return;
     }
 
+
+
     // ======================================
     // FUNCTION
     //=======================================
@@ -60,7 +73,7 @@ function Home() {
 
   return (
     <section>
-      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} />
+      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} onGenreSelect={handleGenreSelect} />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
