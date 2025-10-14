@@ -96,7 +96,24 @@ function Home() {
 
       <section className="movie-grid">
         {items.map((item) => {
-          const price = Math.floor(Math.random() * 250) + 50;
+
+          // set price based on the month they were released. 
+          // parseInt makes e.g 05 (May) to 5. Then 5 get priced 99 (kr).  
+          const releaseDate = item.release_date || item.first_air_date;
+
+          const itemMonth = releaseDate ? parseInt(releaseDate.slice(5,7)) : null;
+
+          let price = 49;
+
+          if (itemMonth >= 4 && itemMonth <= 5) {
+            price = 99;
+          } else if (itemMonth >= 6 && itemMonth <= 7) {
+            price = 149;
+          } else if (itemMonth >= 8 && itemMonth <= 9) {
+            price = 199;
+          } else if (itemMonth >= 10) {
+            price = 249;
+          }
 
           return (
             <Link key={item.id}
