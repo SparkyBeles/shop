@@ -48,6 +48,11 @@ img.cart_icon {
     height: 35px;
 }
 
+.arrow {
+    width: 15px;
+    height: 10px;
+}
+
 section.grid {
   display: flex;
   flex-direction: row;
@@ -148,6 +153,14 @@ button.add_to_cart {
     border-radius: 100px;
     pointer-events: none;
     opacity: 0.2;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
 }
 
 #logo {
