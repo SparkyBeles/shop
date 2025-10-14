@@ -1,5 +1,28 @@
+
+
 body {
     background-color: #aaf7ff;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+  color: rgb(27, 27, 27);
+}
+
+a:visited {
+  color: rgb(121, 121, 121);
+}
+
+a:hover {
+  color: rgb(27, 27, 27);
+}
+
+a:active {
+  color: rgb(0, 0, 0);
 }
 
 main > * {
@@ -50,7 +73,7 @@ div.movie_list_card {
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
-  min-height: 22rem;
+  min-height: 25rem;
 }
 
 div.movie_card_details {
@@ -91,7 +114,7 @@ button.add_to_cart {
     border-radius: 100px;
 }
 
-.add_to_cart:focus {
+.add_to_cart.added {
     background-color: rgb(167, 255, 167);
 }
 
