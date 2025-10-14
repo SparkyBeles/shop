@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { add, toggle, remove } from "../features/CartSlice";
-import { useEffect } from "react";
 import Quantity from "./Quantity";
 import { useNavigate } from "react-router";
 
