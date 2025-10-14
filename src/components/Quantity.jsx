@@ -1,18 +1,22 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { decreaseQuantity, increaseQuantity } from "../features/CartSlice";
 
 function Quantity({id}) {
 
     const isAdded = useSelector((state) => state.cart.items[id]);
+    const dispatch = useDispatch();
     
     const itemInCart = useSelector((state) => 
         state.cart.value.find((item) => item.id === id)
         );
         const itemAmount = itemInCart?.quantity ?? 0;
 
-    function increaseAmount (amount) {
-    console.log("increase");
-}
-    function decreaseAmount (amount) {
+    function increaseAmount (id) {
+        dispatch(increaseQuantity(id));
+        console.log("increase");
+    }
+    function decreaseAmount (id) {
+        dispatch(decreaseQuantity(id))
     console.log("decrease");
     }
 
@@ -21,18 +25,18 @@ console.log(itemAmount)
 
     return (
         <div className="quantity">
-            <img className="arrow" src="arrow_up.png" onClick={(e) => 
+            <img className={isAdded ? 'arrow' : 'arrow_hidden'} src="arrow_up.png" onClick={(e) => 
             {
             e.preventDefault();
             e.stopPropagation();
-            increaseAmount();
+            increaseAmount(id);
             }} />
             <span className={isAdded ? 'amount' : 'amount_hidden'}>{itemAmount}</span>
-            <img className="arrow" src="arrow_down.png" onClick={(e) => 
+            <img className={isAdded ? 'arrow' : 'arrow_hidden'} src="arrow_down.png" onClick={(e) => 
             {
             e.preventDefault();
             e.stopPropagation();
-            decreaseAmount();
+            decreaseAmount(id);
             }} />
         </div>
     )

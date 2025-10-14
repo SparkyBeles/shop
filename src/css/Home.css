@@ -52,6 +52,11 @@ img.cart_icon {
     width: 15px;
     height: 10px;
 }
+.arrow_hidden {
+    width: 15px;
+    height: 10px;
+    display: none;
+}
 
 section.grid {
   display: flex;
@@ -102,6 +107,8 @@ span.movie_grid_title {
 span.movie_grid_price {
     color: red;
     font-weight: 600;
+    text-align: end;
+    margin-top: 1rem;
 }
 
 .amount {

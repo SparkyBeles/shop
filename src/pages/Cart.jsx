@@ -2,6 +2,7 @@ import "../css/Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { remove } from "../features/CartSlice"; 
+import Quantity from "../components/Quantity";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.value);
@@ -28,8 +29,8 @@ function Cart() {
             >
               –
             </button>
-            <span className="cart-item-title">{cartItem.quantity}</span>
-            <img src={cartItem.poster} />
+              <Quantity id={cartItem.id}></Quantity>
+            <img className="cart-poster" src={cartItem.poster} />
             <span className="cart-item-title">{cartItem.title}</span>
 
           </div>
