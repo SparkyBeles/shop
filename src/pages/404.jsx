@@ -4,7 +4,7 @@ import "../css/404.css";
 function NotFound() {
   const navigate = useNavigate();
   const backToHome = () => {
-    navigate("/");
+    navigate("/", {replace: true});
   };
   return (
     <div className="NotFound-container">
