@@ -15,8 +15,9 @@ const cartSlice = createSlice ({
         add : (state, action) => {
             state.value.push(action.payload)
         },
-        remove : (state) => {
-            state.value.pop()
+
+        remove : (state, action) => {
+            state.value = state.value.filter(item => item.id !== action.payload);
         },
         toggle : (state, action) => {
             const id = action.payload;
