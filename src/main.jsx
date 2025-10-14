@@ -9,6 +9,7 @@ import Cart from './pages/Cart.jsx';
 import Confirm from './pages/Confirm.jsx';
 import Checkout from './pages/Checkout.jsx';
 import Details from './pages/Details.jsx';
+import NotFound from './pages/404.jsx';
 import Layout from './pages/Layout.jsx';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/confirm",
     element: <Confirm />
+  },
+  {
+    path:"*",
+    element: <NotFound/>
   }
 ]}
 
