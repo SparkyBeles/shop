@@ -15,6 +15,7 @@ function Cart() {
     <div>
       <h2>Cart Items:</h2>
 
+
       {cart.map((cartItem, index) => (
         <div className="cart-item-sidebar" key={index}>
           <div className="moviedetails-sidebar">
@@ -26,6 +27,7 @@ function Cart() {
             </button>
             <img src={cartItem.poster} />
             <span className="cart-item-title">{cartItem.title}</span>
+
           </div>
           <span className="cart-item-price">{cartItem.price} kr</span>
         </div>

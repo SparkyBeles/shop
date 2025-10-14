@@ -9,7 +9,7 @@ const Header = ({onCartClick}) => {
             <span id="logo">Movieshop</span>
             
             <img className="cart_icon"
-             src="src/assets/cart.png"
+             src="/cart.png"
              onClick={onCartClick}
              
              ></img>
