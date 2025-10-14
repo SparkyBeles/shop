@@ -19,8 +19,6 @@ function Details() {
   const location = useLocation();
   const { item } = location.state || {};
 
-  console.log(item);
-
   if (!item) {
     return <div> No movie...</div>;
   }
