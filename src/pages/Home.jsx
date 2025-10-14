@@ -22,13 +22,16 @@ function Home() {
   const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
   const handleGenreSelect = async (mediaType, genreName) => {
-    const genreId = mediaType === "movie" ? movieGenreList[genreName] : tvGenreList[genreName];
-    
-    if(!genreId) return;
+    const genreId =
+      mediaType === "movie"
+        ? movieGenreList[genreName]
+        : tvGenreList[genreName];
+
+    if (!genreId) return;
 
     const results = await genreAPI(mediaType, genreId);
     setItems(results ?? []);
-  }
+  };
 
   // =======================================
   // API CALLS
@@ -55,8 +58,6 @@ function Home() {
       return;
     }
 
-
-
     // ======================================
     // FUNCTION
     //=======================================
@@ -73,7 +74,11 @@ function Home() {
 
   return (
     <section>
-      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} onGenreSelect={handleGenreSelect} />
+      <SideMenu
+        isOpen={sideMenuOpen}
+        toggleSideMenu={toggleSideMenu}
+        onGenreSelect={handleGenreSelect}
+      />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
@@ -89,29 +94,26 @@ function Home() {
         </div>
       </section>
 
-<section className="movie-grid">
+      <section className="movie-grid">
+        {items.map((item) => {
+          const price = Math.floor(Math.random() * 250) + 50;
 
-          {items.map((item) => (
-            <Link 
-            key={item.id}
-              to= "/details"
-              state= {{ item}}
-              
-              >
+          return (
+            <Link key={item.id}
+             to="/details" 
+             state={{ item: {...item, price} }}>
 
-            <MovieListCard
-              id={item.id}
-              key={`${item.type}-${item.id}`}
-              poster={item.poster ? `${ImgBase}${item.poster}` : ""}
-              title={item.title}
-              price={Math.floor(Math.random() * 250) + 50}
-            />
-          </Link>
-        ))}
-
-</section>
-
-    
+              <MovieListCard
+                id={item.id}
+                key={`${item.type}-${item.id}`}
+                poster={item.poster ? `${ImgBase}${item.poster}` : ""}
+                title={item.title}
+                price={price}
+              />
+            </Link>
+          );
+        })}
+      </section>
     </section>
   );
 }
