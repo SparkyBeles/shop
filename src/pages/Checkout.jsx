@@ -1,10 +1,14 @@
-import { useNavigate } from "react-router-dom";
-
-import Menu from "../components/Menu";
+import { useNavigate } from "react-router";
 import "../css/Checkout.css";
+import { useState } from "react";
+import Lottie from "lottie-react";
+import loaderAnimation from "../assets/Add To Cart Success.json";
+import { useRef } from "react";
 
 function Checkout() {
   const navigate = useNavigate();
+  const lottieRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleCancel = () => {
     navigate("/cart");
@@ -12,7 +16,15 @@ function Checkout() {
 
   const handlePurchase = (e) => {
     e.preventDefault();
-    navigate("/confirm");
+    setIsPlaying(true);
+    requestAnimationFrame(() => {
+      lottieRef.current?.stop();
+      lottieRef.current?.play();
+    });
+
+    setTimeout(() => {
+      navigate("/confirm");
+    }, 1500);
   };
 
   return (
@@ -66,6 +78,16 @@ function Checkout() {
             </button>
           </div>
         </form>
+        {isPlaying && (
+          <div className="load-ani">
+            <Lottie
+              lottieRef={lottieRef}
+              animationData={loaderAnimation}
+              loop={false}
+              autoPlay={false}
+            />
+          </div>
+        )}
       </div>
     </>
   );
