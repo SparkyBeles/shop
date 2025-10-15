@@ -46,25 +46,24 @@ function Details() {
                 {item.overview?.slice(0, 400) || "No description available"}{" "}
               </p>
 
-              <h2> {item.price} kr </h2>
+              <h2> Price: {item.price} kr </h2>
 
-              <div className="buy-buttons">
-
+            <div className="buy-buttons">
+              
                 <Buttons
                   id={item.id}
                   poster={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                   title={item.title}
                   price={item.price}
                 />
-              </div>
+             </div>
             </div>
           </>
         ) : (
           <p>Loading movie...</p>
         )}
       </div>
-      {/* // If it is zoomed, show this, else => dont show. 
-          // Code is inside { } to show it is jsx-code and not HTML. */}
+
       {isZoomed === true ? (
         <div className="overlay" onClick={zooming}>
           <img
