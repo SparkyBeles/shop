@@ -59,14 +59,6 @@ function Home() {
 
   return (
     <section>
-      {/* <SideMenu
-        isOpen={sideMenuOpen}
-        toggleSideMenu={toggleSideMenu}
-        onGenreSelect={handleGenreSelect}
-        onPopularSelect={handlePopularSelect}
-      />
-
-      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} /> */}
 
       <section className="searchBar">
         <div className="search-container">
