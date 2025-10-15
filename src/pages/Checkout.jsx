@@ -1,12 +1,21 @@
 
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import Menu from "../components/Menu";
 import "../css/Checkout.css";
 
 function Checkout() {
 
     const navigate = useNavigate();
+    const cart = useSelector((state) => state.cart.value);
+
+    function cartTotal(cart) {
+        let sum = 0;
+        cart.forEach(item => {
+            sum += item.price;
+        });
+        return sum;
+    }
 
     const handleCancel = () => {
         navigate("/cart");
@@ -23,8 +32,20 @@ function Checkout() {
             <div className="checkout-container">
 
                 <div className="checkout-summary">
-                    <p><strong>Your cart:</strong> 4 items</p>
-                    <p><strong>Total:</strong> 100kr</p>
+                    <p><strong>Your cart:</strong> {cart.length} items</p>
+                    <p><strong>Total:</strong> {cartTotal(cart)} kr</p>
+                </div>
+
+                <div className="checkout-items">
+                    {cart.map((cartItem, index) => (
+                        <div className="checkout-item" key={index}>
+                            <div className="checkout-item-left">
+                                <img src={cartItem.poster} alt={cartItem.title} />
+                                <span className="checkout-item-title">{cartItem.title}</span>
+                            </div>
+                            <span className="checkout-item-price">{cartItem.price} kr</span>
+                        </div>
+                    ))}
                 </div>
 
                 <form className="checkout-form" onSubmit={handlePurchase}>
