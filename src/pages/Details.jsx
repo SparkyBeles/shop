@@ -1,18 +1,11 @@
 import { useState } from "react";
 import Menu from "../components/Menu";
 import "../css/Details.css";
-import { useLocation, useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { add } from "../features/CartSlice";
+import { useLocation} from "react-router";
+
+import Buttons from "../components/Buttons";
 
 function Details() {
-  const navigate = useNavigate();
-
-  const goToCheckout = () => {
-    navigate("/Checkout");
-  };
-
-  const dispatch = useDispatch();
   const [isZoomed, setIsZoomed] = useState(false);
 
   const zooming = () => {
@@ -56,32 +49,13 @@ function Details() {
               <h2> {item.price} kr </h2>
 
               <div className="buy-buttons">
-                <button
-                  onClick={() =>
-                    dispatch(
-                      add({
-                        ...item,
-                        poster: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                      })
-                    )
-                  }
-                >
-                  Add to cart
-                </button>
-                {/* TODO Buy now, adds to cart and navigate to check out. */}
-                <button id="buy-now-btn" 
-                onClick = {() => {
-                    dispatch(
-                      add({
-                        ...item,
-                        poster: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                      })
-                    )
-                    goToCheckout();
-                }}
-                  >
-                  Buy now
-                </button>
+
+                <Buttons
+                  id={item.id}
+                  poster={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  title={item.title}
+                  price={item.price}
+                />
               </div>
             </div>
           </>
