@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import searchApi from "../api/searchApi";
 import { movieGenreList, tvGenreList } from "../api/genreMaps";
 import genreAPI from "../api/genreAPI";
+import popularAPI from "../api/popularAPI";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
@@ -22,13 +23,25 @@ function Home() {
   const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 
   const handleGenreSelect = async (mediaType, genreName) => {
-    const genreId = mediaType === "movie" ? movieGenreList[genreName] : tvGenreList[genreName];
-    
-    if(!genreId) return;
+    const genreId =
+      mediaType === "movie"
+        ? movieGenreList[genreName]
+        : tvGenreList[genreName];
+
+    if (!genreId) return;
 
     const results = await genreAPI(mediaType, genreId);
     setItems(results ?? []);
-  }
+  };
+
+  const handlePopularSelect = async (searchWord) => {
+    
+    if (!searchWord) return;
+
+    const results = await popularAPI(searchWord);
+    setItems(results ?? []);
+  };
+
 
   // =======================================
   // API CALLS
@@ -55,8 +68,6 @@ function Home() {
       return;
     }
 
-
-
     // ======================================
     // FUNCTION
     //=======================================
@@ -73,7 +84,12 @@ function Home() {
 
   return (
     <section>
-      <SideMenu isOpen={sideMenuOpen} toggleSideMenu={toggleSideMenu} onGenreSelect={handleGenreSelect} />
+      <SideMenu
+        isOpen={sideMenuOpen}
+        toggleSideMenu={toggleSideMenu}
+        onGenreSelect={handleGenreSelect}
+        onPopularSelect={handlePopularSelect}
+      />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
@@ -89,30 +105,46 @@ function Home() {
         </div>
       </section>
 
-<section className="movie-grid">
+      <section className="movie-grid">
+        {items.map((item) => {
 
-          {items.map((item) => (
-            <Link 
-            key={item.id}
-              to= "/details"
-              state= {{ item}}
-              
-              >
+          // set price based on the month they were released. 
+          // parseInt makes e.g 05 (May) to 5. Then 5 get priced 99 (kr).  
+          const releaseDate = item.release_date || item.first_air_date;
 
-            <MovieListCard
-              id={item.id}
-              key={`${item.type}-${item.id}`}
-              poster={item.poster ? `${ImgBase}${item.poster}` : ""}
-              title={item.title}
-              price={Math.floor(Math.random() * 250) + 50}
-              quantity={item.quantity}
+          const itemMonth = releaseDate ? parseInt(releaseDate.slice(5,7)) : null;
+
+          let price = 49;
+
+          if (itemMonth >= 4 && itemMonth <= 5) {
+            price = 99;
+          } else if (itemMonth >= 6 && itemMonth <= 7) {
+            price = 149;
+          } else if (itemMonth >= 8 && itemMonth <= 9) {
+            price = 199;
+          } else if (itemMonth >= 10) {
+            price = 249;
+          }
+
+          return (
+            <Link key={item.id}
+             to="/details" 
+             state={{ item: {...item, price} }}>
+
+              <MovieListCard
+                id={item.id}
+                key={`${item.type}-${item.id}`}
+                poster={item.poster ? `${ImgBase}${item.poster}` : ""}
+                title={item.title}
+                price={price}
+                quantity={item.quantity}
+
               />
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
+      </section>
 
-</section>
-
-    
     </section>
   );
 }
