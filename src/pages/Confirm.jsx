@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 
 function Confirm() {
   const location = useLocation();
-  const orderNumber =
-    location.state?.orderNumber || Math.floor(100000 + Math.random() * 900000);
+  const [orderNumber, setOrderNumber] = useState(() => {
+    return location.state?.orderNumber || Math.floor(100000 + Math.random() * 900000);
+  });
 
   const [showConfetti, setShowConfetti] = useState(true);
 
