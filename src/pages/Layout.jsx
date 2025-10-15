@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import Top from "../components/Top";
-import Menu from "../components/Menu";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Cart from "./Cart";
