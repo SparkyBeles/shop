@@ -13,7 +13,7 @@ function Layout () {
         <>
         <header>
             <Top  onCartClick={() => setIsCartOpen(true)} />
-            <Menu />
+            {/* <Menu /> */}
         </header>
         <main>
             <Outlet />

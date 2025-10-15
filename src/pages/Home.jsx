@@ -84,14 +84,14 @@ function Home() {
 
   return (
     <section>
-      <SideMenu
+      {/* <SideMenu
         isOpen={sideMenuOpen}
         toggleSideMenu={toggleSideMenu}
         onGenreSelect={handleGenreSelect}
         onPopularSelect={handlePopularSelect}
       />
 
-      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
+      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} /> */}
 
       <section className="searchBar">
         <div className="search-container">
