@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import CartTotalItems from "./CartTotalItems";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
+import "../css/Top.css";
 
 const Header = ({onCartClick}) => {
 

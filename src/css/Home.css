@@ -183,11 +183,11 @@ button.add_to_cart {
     gap: 0.2rem;
 }
 
-#logo {
+/* #logo {
     font-family: Modak;
     font-weight: 300;
     font-size: 2.5rem;
-}
+} */
 
 .movie-grid {
     display: grid;
