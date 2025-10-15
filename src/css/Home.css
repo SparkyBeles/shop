@@ -48,6 +48,16 @@ img.cart_icon {
     height: 35px;
 }
 
+.arrow {
+    width: 15px;
+    height: 10px;
+}
+.arrow_hidden {
+    width: 15px;
+    height: 10px;
+    display: none;
+}
+
 section.grid {
   display: flex;
   flex-direction: row;
@@ -60,6 +70,14 @@ section.grid {
 
 section.header {
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+section.cart-plus-total {
+    margin: 5px;
+    gap: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -86,6 +104,7 @@ div.movie_list_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
 }
 
@@ -96,6 +115,17 @@ span.movie_grid_title {
 span.movie_grid_price {
     color: red;
     font-weight: 600;
+    text-align: end;
+    margin-top: 1rem;
+}
+
+.amount {
+    color: grey;
+    font-weight: 400;
+}
+
+.amount_hidden {
+    display: none;
 }
 
 button.buy_now {
@@ -106,6 +136,22 @@ button.buy_now {
     border-radius: 100px;
 }
 
+button.remove {
+    background-color: rgb(255, 107, 107);
+    padding: 10px;
+    margin-left: 2px;
+    border: 0px;
+    border-radius: 100px;
+}
+
+.button_hidden {
+    padding: 10px;
+    margin-left: 2px;
+    border: 0px;
+    border-radius: 100px;
+    display: none;
+}   
+
 button.add_to_cart {
     background-color: rgb(225, 225, 225);
     padding: 10px;
@@ -114,8 +160,22 @@ button.add_to_cart {
     border-radius: 100px;
 }
 
-.add_to_cart.added {
+.added {
     background-color: rgb(167, 255, 167);
+    padding: 10px;
+    margin-right: 2px;
+    border: 0px;
+    border-radius: 100px;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
 }
 
 #logo {
