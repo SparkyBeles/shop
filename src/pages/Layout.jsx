@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import Top from "../components/Top";
-import Menu from "../components/Menu";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Cart from "./Cart";
@@ -8,15 +7,15 @@ import Cart from "./Cart";
 
 function Layout () {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [items, setItems] = useState([]);
 
     return (
         <>
         <header>
-            <Top  onCartClick={() => setIsCartOpen(true)} />
-            {/* <Menu /> */}
+            <Top setItems={setItems} onCartClick={() => setIsCartOpen(true)} />
         </header>
         <main>
-            <Outlet />
+            <Outlet context={{ items, setItems }}/>
             <Sidebar 
             open={isCartOpen} 
             onClose={() => setIsCartOpen(false)} 

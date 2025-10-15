@@ -3,27 +3,31 @@ import CartTotalItems from "./CartTotalItems";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
 import "../css/Top.css";
+import { movieGenreList, tvGenreList } from "../api/genreMaps";
+import genreAPI from "../api/genreAPI";
+import popularAPI from "../api/popularAPI";
 
-const Header = ({onCartClick}) => {
+
+const Top = ({ setItems, onCartClick}) => {
 
 const [sideMenuOpen, setSideMenuOpen] = useState(false);
+
 const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
 const handleGenreSelect = async (mediaType, genreName) => {
-
 const genreId =
     mediaType === "movie"
       ? movieGenreList[genreName]
       : tvGenreList[genreName];
-    if (!genreId) return;
+      if (!genreId) return;
     const results = await genreAPI(mediaType, genreId);
     setItems(results ?? []);
     };
 
-const handlePopularSelect = async (searchWord) => {
-    if (!searchWord) return;
-    const results = await popularAPI(searchWord);
-    setItems(results ?? []);
-    };
+    const handlePopularSelect = async (searchWord) => {
+     if (!searchWord) return;
+         const results = await popularAPI(searchWord);
+         setItems(results ?? []);
+     };
     
 
     return (
@@ -57,4 +61,4 @@ const handlePopularSelect = async (searchWord) => {
     )
 }
 
-export default Header;
+export default Top;
