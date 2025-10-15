@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 function Confirm() {
   const location = useLocation();
-  const [orderNumber, setOrderNumber] = useState(() => {
+  const [orderNumber] = useState(() => {
     return location.state?.orderNumber || Math.floor(100000 + Math.random() * 900000);
   });
 
