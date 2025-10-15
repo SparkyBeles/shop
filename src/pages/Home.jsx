@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import searchApi from "../api/searchApi";
 import { movieGenreList, tvGenreList } from "../api/genreMaps";
 import genreAPI from "../api/genreAPI";
+import popularAPI from "../api/popularAPI";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
@@ -32,6 +33,15 @@ function Home() {
     const results = await genreAPI(mediaType, genreId);
     setItems(results ?? []);
   };
+
+  const handlePopularSelect = async (searchWord) => {
+    
+    if (!searchWord) return;
+
+    const results = await popularAPI(searchWord);
+    setItems(results ?? []);
+  };
+
 
   // =======================================
   // API CALLS
@@ -78,6 +88,7 @@ function Home() {
         isOpen={sideMenuOpen}
         toggleSideMenu={toggleSideMenu}
         onGenreSelect={handleGenreSelect}
+        onPopularSelect={handlePopularSelect}
       />
 
       <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />

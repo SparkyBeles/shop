@@ -2,13 +2,22 @@ import { NavLink } from "react-router";
 import "../css/SideMenu.css";
 import { movieGenreList, tvGenreList } from "../api/genreMaps";
 
-const SideMenu = ({ isOpen, toggleSideMenu, onGenreSelect }) => {
-  
-
+const SideMenu = ({
+  isOpen,
+  toggleSideMenu,
+  onGenreSelect,
+  onPopularSelect,
+}) => {
   const handleGenreClick = (mediaType, category) => {
     onGenreSelect(mediaType, category);
     toggleSideMenu();
-  }
+  };
+
+  const handlePopularClick = (searchWord) => {
+    onPopularSelect(searchWord);
+    toggleSideMenu();
+    console.log("fetching.........");
+  };
 
   return (
     <>
@@ -20,68 +29,55 @@ const SideMenu = ({ isOpen, toggleSideMenu, onGenreSelect }) => {
 
           <h3>Movieshop</h3>
 
-
-          <NavLink to="/Cart" onClick={toggleSideMenu} className={"nav-button"}>
-            Cart
-          </NavLink>
-
-          <NavLink
-            to="/Checkout"
-            onClick={toggleSideMenu}
-            className={"nav-button"}
+<div className="about-container">
+          <button
+            className="top-rated-button"
+            onClick={() => handlePopularClick("top_rated")}
           >
-            Checkout
-          </NavLink>
-
+            Top rated movies
+          </button>
+          <button
+            className="top-rated-button"
+            onClick={() => handlePopularClick("popular")}
+          >
+             Popular movies
+          </button>
+          </div>
 
           <div className="category-conatiner">
-
             <h3>Movies</h3>
 
-            {Object.keys(movieGenreList).map((category) =>  (
+            {Object.keys(movieGenreList).map((category) => (
               <button
-              key={category}
-              className="nav-button-category"
-              onClick={() => handleGenreClick("movie", category)}
-               >
+                key={category}
+                className="nav-button-category"
+                onClick={() => handleGenreClick("movie", category)}
+              >
                 {category}
-               </button>
+              </button>
             ))}
 
             <h3>Tv series</h3>
 
-            {Object.keys(tvGenreList).map((category) =>  (
+            {Object.keys(tvGenreList).map((category) => (
               <button
-              key={category}
-              className="nav-button-category"
-              onClick={() => handleGenreClick("tv", category)}
-               >
+                key={category}
+                className="nav-button-category"
+                onClick={() => handleGenreClick("tv", category)}
+              >
                 {category}
-               </button>
+              </button>
             ))}
-
           </div>
 
           <div className="about-container">
-            <NavLink
-              to="/"
-              onClick={toggleSideMenu}
-              className={"nav-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               About
             </NavLink>
-            <NavLink
-              to="/"
-              onClick={toggleSideMenu}
-              className={"nav-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               FAQ
             </NavLink>
-            <NavLink
-              to="/"
-              onClick={toggleSideMenu}
-              className={"nav-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               Contact
             </NavLink>
           </div>
