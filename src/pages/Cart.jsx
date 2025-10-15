@@ -2,13 +2,14 @@ import "../css/Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { remove } from "../features/CartSlice"; 
+import Quantity from "../components/Quantity";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
   function cartTotal(cart) {
-    return cart.reduce((sum, item) => sum + item.price, 0);
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
   return (
@@ -21,11 +22,14 @@ function Cart() {
           <div className="moviedetails-sidebar">
             <button 
               className="remove" 
-              onClick={() => dispatch(remove(cartItem.id))}
+              onClick={() => {
+                dispatch(remove(cartItem.id));
+              }}
             >
               –
             </button>
-            <img src={cartItem.poster} />
+              <Quantity id={cartItem.id}></Quantity>
+            <img className="cart-poster" src={cartItem.poster} />
             <span className="cart-item-title">{cartItem.title}</span>
 
           </div>

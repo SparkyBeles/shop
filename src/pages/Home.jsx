@@ -137,11 +137,14 @@ function Home() {
                 poster={item.poster ? `${ImgBase}${item.poster}` : ""}
                 title={item.title}
                 price={price}
+                quantity={item.quantity}
+
               />
             </Link>
           );
         })}
       </section>
+
     </section>
   );
 }
