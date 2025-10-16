@@ -29,19 +29,19 @@ const SideMenu = ({
 
           <h3>Movieshop</h3>
 
-<div className="about-container">
-          <button
-            className="top-rated-button"
-            onClick={() => handlePopularClick("top_rated")}
-          >
-            Top rated movies
-          </button>
-          <button
-            className="top-rated-button"
-            onClick={() => handlePopularClick("popular")}
-          >
-             Popular movies
-          </button>
+          <div className="about-container">
+            <button
+              className="top-rated-button"
+              onClick={() => handlePopularClick("top_rated")}
+            >
+              Top rated movies
+            </button>
+            <button
+              className="top-rated-button"
+              onClick={() => handlePopularClick("popular")}
+            >
+              Popular movies
+            </button>
           </div>
 
           <div className="category-conatiner">
