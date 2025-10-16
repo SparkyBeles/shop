@@ -2,8 +2,12 @@ import { useLocation, Link } from "react-router-dom";
 import "../css/Confirm.css";
 import Confetti from "react-confetti";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../features/CartSlice";
 
 function Confirm() {
+        const dispatch = useDispatch();
+
   const location = useLocation();
   const [orderNumber] = useState(() => {
     return location.state?.orderNumber || Math.floor(100000 + Math.random() * 900000);
@@ -48,8 +52,11 @@ function Confirm() {
           Ordernummer: <strong>{orderNumber}</strong>
         </h2>
 
-        <Link to="/" className="confirm-button fade-in delay">
-          Tillbaka till startsidan
+        <Link to="/" className="confirm-button fade-in delay" >
+          <span onClick={dispatch(clearCart)}
+          >
+            Tillbaka till startsidan
+            </span>
         </Link>
       </div>
     </>
