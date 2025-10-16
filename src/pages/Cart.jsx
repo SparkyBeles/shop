@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { remove } from "../features/CartSlice"; 
 import Quantity from "../components/Quantity";
 
-function Cart({open, setIsCartOpen}) {
+function Cart({setIsCartOpen}) {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
