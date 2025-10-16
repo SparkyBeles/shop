@@ -12,7 +12,7 @@ function Checkout() {
     function cartTotal(cart) {
         let sum = 0;
         cart.forEach(item => {
-            sum += item.price;
+            sum += item.price * (item.quantity || 1);
         });
         return sum;
     }
@@ -32,7 +32,9 @@ function Checkout() {
             <div className="checkout-container">
 
                 <div className="checkout-summary">
-                    <p><strong>Your cart:</strong> {cart.length} items</p>
+                    <p>
+                <strong>Your cart:</strong> {cart.reduce((total, item) => total + (item.quantity || 1), 0)} items
+                    </p>
                     <p><strong>Total:</strong> {cartTotal(cart)} kr</p>
                 </div>
 
@@ -40,13 +42,21 @@ function Checkout() {
                     {cart.map((cartItem, index) => (
                         <div className="checkout-item" key={index}>
                             <div className="checkout-item-left">
-                                <img src={cartItem.poster} alt={cartItem.title} />
-                                <span className="checkout-item-title">{cartItem.title}</span>
-                            </div>
-                            <span className="checkout-item-price">{cartItem.price} kr</span>
+                            <span className="checkout-item-quantity">
+                                x {cartItem.quantity || 1}
+                            </span>
+                            <img src={cartItem.poster} alt={cartItem.title} />
+                            <span className="checkout-item-title">{cartItem.title}</span>
                         </div>
-                    ))}
-                </div>
+
+                        <div className="checkout-item-right">
+                            <span className="checkout-item-price">
+                                {cartItem.price * (cartItem.quantity || 1)} kr
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
                 <form className="checkout-form" onSubmit={handlePurchase}>
                     <h3>Ship to:</h3>
