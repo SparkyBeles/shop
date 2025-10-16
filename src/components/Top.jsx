@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import CartTotalItems from "./CartTotalItems";
 import { useState } from "react";
 import SideMenu from "./SideMenu";
@@ -13,6 +13,10 @@ const Top = ({ setItems, onCartClick}) => {
 const [sideMenuOpen, setSideMenuOpen] = useState(false);
 
 const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
+
+const location = useLocation();
+const isHome = location.pathname === "/"; 
+
 const handleGenreSelect = async (mediaType, genreName) => {
 const genreId =
     mediaType === "movie"
@@ -32,7 +36,9 @@ const genreId =
 
     return (
     <section className="header">
-        <div className="menu-container">
+
+        <div className="menu-container"
+        style={{visibility: isHome ? 'visible' : 'hidden' }}>
             <SideMenu 
                 isOpen={sideMenuOpen}
                 toggleSideMenu={toggleSideMenu}
@@ -41,6 +47,7 @@ const genreId =
             />
             <img className="menu-image" src="./menu.svg" alt="menu" onClick={toggleSideMenu}/>
         </div>
+
 
         <Link to="/">
             <span id="logo">Movieshop</span>
