@@ -22,7 +22,11 @@ function Layout () {
             <Sidebar 
             open={isCartOpen} 
             onClose={() => setIsCartOpen(false)} 
-            title="cart"><Cart/></Sidebar>
+            title="cart">
+            <Cart
+            open={isCartOpen}
+            setIsCartOpen={setIsCartOpen} 
+/></Sidebar>
         </main>
         </>
     )
