@@ -1,18 +1,11 @@
 import { useState } from "react";
 import Menu from "../components/Menu";
 import "../css/Details.css";
-import { useLocation, useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { add } from "../features/CartSlice";
+import { useLocation} from "react-router";
+
+import Buttons from "../components/Buttons";
 
 function Details() {
-  const navigate = useNavigate();
-
-  const goToCheckout = () => {
-    navigate("/Checkout");
-  };
-
-  const dispatch = useDispatch();
   const [isZoomed, setIsZoomed] = useState(false);
 
   const zooming = () => {
@@ -53,44 +46,24 @@ function Details() {
                 {item.overview?.slice(0, 400) || "No description available"}{" "}
               </p>
 
-              <h2> {item.price} kr </h2>
+              <h2> Price: {item.price} kr </h2>
 
-              <div className="buy-buttons">
-                <button
-                  onClick={() =>
-                    dispatch(
-                      add({
-                        ...item,
-                        poster: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                      })
-                    )
-                  }
-                >
-                  Add to cart
-                </button>
-                {/* TODO Buy now, adds to cart and navigate to check out. */}
-                <button id="buy-now-btn" 
-                onClick = {() => {
-                    dispatch(
-                      add({
-                        ...item,
-                        poster: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                      })
-                    )
-                    goToCheckout();
-                }}
-                  >
-                  Buy now
-                </button>
-              </div>
+            <div className="buy-buttons">
+              
+                <Buttons
+                  id={item.id}
+                  poster={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  title={item.title}
+                  price={item.price}
+                />
+             </div>
             </div>
           </>
         ) : (
           <p>Loading movie...</p>
         )}
       </div>
-      {/* // If it is zoomed, show this, else => dont show. 
-          // Code is inside { } to show it is jsx-code and not HTML. */}
+
       {isZoomed === true ? (
         <div className="overlay" onClick={zooming}>
           <img
