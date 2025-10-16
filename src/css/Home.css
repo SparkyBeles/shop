@@ -210,6 +210,51 @@ button.add_to_cart {
     font-size: 30px;
 }
 
-.menu-container {
-    background-color: #aaf7ff;
+
+@media (max-width: 1080px ){
+    .search-input{
+        display: flex;
+        width: 600px;
+    }
+    
 }
+
+
+@media (max-width: 780px){
+    .search-input{
+        display: flex;
+        width: 300px;
+        font-size: 15px;
+        padding: 30px;
+       
+       
+    }
+    
+}
+
+
+
+
+@media (max-width: 780px){
+    .movie-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+       
+    }
+}
+
+@media (max-width: 430px){
+    .movie-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+       
+    }
+
+
+
+    
+}
+
+

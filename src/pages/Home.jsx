@@ -15,11 +15,12 @@ function Home() {
 
   const { items, setItems } = useOutletContext();
 
+
   const [search, setSearch] = useState("");
 
 
   // =======================================
-  // API CALLS
+  // Initial  Load
   //========================================
 
   useEffect(() => {
@@ -29,11 +30,7 @@ function Home() {
     })();
   }, []);
 
-  // =======================================
-  // EFFECTS
-  //========================================
-
-  // live search
+  // search
   useEffect(() => {
     if (!search || search.trim() === "") {
       (async () => {
@@ -43,13 +40,19 @@ function Home() {
       return;
     }
 
-    // ======================================
-    // FUNCTION
-    //=======================================
-
     (async () => {
       const results = await searchApi(search);
-      setItems(results);
+      const mapped = (results ?? []).map((r) => ({
+        id: r.id,
+        title: r.title || r.name,
+        poster: r.poster_path || r.poster, // för listkortet
+        poster_path: r.poster_path || r.poster, // för Details om den läser poster_path
+        description: r.overview || r.description || "",
+        overview: r.overview || r.description || "",
+        release_date: r.release_date || r.releaseDate,
+        type: r.media_type || r.type || "movie",
+      }));
+      setItems(mapped);
     })();
   }, [search]);
 
@@ -74,12 +77,13 @@ function Home() {
 
       <section className="movie-grid">
         {items.map((item) => {
-
-          // set price based on the month they were released. 
-          // parseInt makes e.g 05 (May) to 5. Then 5 get priced 99 (kr).  
+          // set price based on the month they were released.
+          // parseInt makes e.g 05 (May) to 5. Then 5 get priced 99 (kr).
           const releaseDate = item.release_date || item.first_air_date;
 
-          const itemMonth = releaseDate ? parseInt(releaseDate.slice(5,7)) : null;
+          const itemMonth = releaseDate
+            ? parseInt(releaseDate.slice(5, 7))
+            : null;
 
           let price = 49;
 
@@ -94,10 +98,11 @@ function Home() {
           }
 
           return (
-            <Link key={item.id}
-             to="/details" 
-             state={{ item: {...item, price} }}>
-
+            <Link
+              key={item.id}
+              to="/details"
+              state={{ item: { ...item, price } }}
+            >
               <MovieListCard
                 id={item.id}
                 key={`${item.type}-${item.id}`}
@@ -105,13 +110,11 @@ function Home() {
                 title={item.title}
                 price={price}
                 quantity={item.quantity}
-
               />
             </Link>
           );
         })}
       </section>
-
     </section>
   );
 }

@@ -12,7 +12,10 @@ function Layout () {
     return (
         <>
         <header>
+
+           
             <Top setItems={setItems} onCartClick={() => setIsCartOpen(true)} />
+
         </header>
         <main>
             <Outlet context={{ items, setItems }}/>
