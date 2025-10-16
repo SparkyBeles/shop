@@ -1,0 +1,16 @@
+@media (max-width: 800px) {
+
+    #logo {
+    font-family: Modak;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+}
+
+@media (min-width: 801px) {
+        #logo {
+    font-family: Modak;
+    font-weight: 300;
+    font-size: 5rem;
+}
+}
