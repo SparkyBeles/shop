@@ -7,15 +7,18 @@ import Cart from "./Cart";
 
 function Layout () {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [items, setItems] = useState([]);
 
     return (
         <>
         <header>
-            <Top  onCartClick={() => setIsCartOpen(true)} />
+
            
+            <Top setItems={setItems} onCartClick={() => setIsCartOpen(true)} />
+
         </header>
         <main>
-            <Outlet />
+            <Outlet context={{ items, setItems }}/>
             <Sidebar 
             open={isCartOpen} 
             onClose={() => setIsCartOpen(false)} 

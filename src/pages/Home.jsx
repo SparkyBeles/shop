@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import tmdbAPI from "../api/tmdbAPI";
 import "../css/Home.css";
-import SideMenu from "../components/SideMenu";
 import MovieListCard from "../components/MovieListCard";
-import { Link } from "react-router";
+import { Link, useOutletContext } from "react-router";
 import searchApi from "../api/searchApi";
-import { movieGenreList, tvGenreList } from "../api/genreMaps";
-import genreAPI from "../api/genreAPI";
-import popularAPI from "../api/popularAPI";
 
 const ImgBase = "https://image.tmdb.org/t/p/w342";
 
@@ -15,31 +11,13 @@ function Home() {
   // ======================================================
   //    STATES
   // ======================================================
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
-  const [sideMenuOpen, setSideMenuOpen] = useState(false);
+  const { items, setItems } = useOutletContext();
+
+
   const [search, setSearch] = useState("");
 
-  const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
-
-  const handleGenreSelect = async (mediaType, genreName) => {
-    const genreId =
-      mediaType === "movie"
-        ? movieGenreList[genreName]
-        : tvGenreList[genreName];
-
-    if (!genreId) return;
-
-    const results = await genreAPI(mediaType, genreId);
-    setItems(results ?? []);
-  };
-
-  const handlePopularSelect = async (searchWord) => {
-    if (!searchWord) return;
-
-    const results = await popularAPI(searchWord);
-    setItems(results ?? []);
-  };
 
   // =======================================
   // Initial  Load
@@ -84,14 +62,6 @@ function Home() {
 
   return (
     <section>
-      <SideMenu
-        isOpen={sideMenuOpen}
-        toggleSideMenu={toggleSideMenu}
-        onGenreSelect={handleGenreSelect}
-        onPopularSelect={handlePopularSelect}
-      />
-
-      <img src="./menu.svg" alt="menu" onClick={toggleSideMenu} />
 
       <section className="searchBar">
         <div className="search-container">

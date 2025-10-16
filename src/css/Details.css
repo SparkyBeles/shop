@@ -76,13 +76,7 @@
     border-radius: 0.5rem;
   }
 
-  .buy-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .buy-buttons button {
+  .buy-buttons button{
     width: 10rem;
     height: 4rem;
     color: black;
@@ -92,6 +86,7 @@
     border: rgb(241, 244, 245) solid 2px;
     font-size: 1rem;
   }
+
 }
 
 @media (min-width: 1201px) {
