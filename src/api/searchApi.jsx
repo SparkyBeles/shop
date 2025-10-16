@@ -65,7 +65,9 @@ async function searchApi(search) {
           type: item.media_type === "movie" ? "movie" : "series",
           id: item.id,
           title: item.title || item.name,
-          poster: item.poster_path
+          poster: item.poster_path,
+          description: item.overview,
+          release_date: item.release_date || item.first_air_date
         }));
       
       return mapped;

@@ -1,15 +1,6 @@
-import { Link } from "react-router";
-import { useDispatch } from "react-redux";
-import { add } from "../features/CartSlice";
+import Buttons from "./Buttons";
 
 function MovieListCard({id, poster, title, price}) {
-
-      const dispatch = useDispatch()
-      const addToCart = () => {
-        const item = {id, poster, title, price};
-        dispatch(add(item));
-        console.log(item);
-      }
 
     return (
         <>
@@ -19,21 +10,7 @@ function MovieListCard({id, poster, title, price}) {
                     <span className="movie_grid_title">{title}</span>
                     <span className="movie_grid_price">{price} kr</span>
                 </div>
-            <div className="movie_list_buttons">
-            <button className="add_to_cart" onClick={(e) => 
-                {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    addToCart();
-                }}>
-                <img className="cart_button" src="src/assets/cart.png"></img>
-            </button>
-            <Link to="/checkout">
-            <button className="buy_now">
-                <img className="cart_button" src="src/assets/coins.png"></img>
-                 </button>
-            </Link>
-        </div>
+        <Buttons id={id} poster={poster} title={title} price={price}></Buttons>
         </div>
         </>
     )

@@ -1,80 +1,89 @@
 .side-menu {
-    position: fixed;
-    left: -14rem;
-    background-color: rgb(247, 250, 250);
-    transition: left 0.3s ease;
-    width: 13rem;
-    height: 80vh;
-    margin-left: 0.75rem;
-    border-radius: 0.25rem;
-    border: rgb(121, 205, 216) solid 2px;
-    
+  position: absolute;
+  display: flex;
+  left: -16rem;
+  background-color: rgb(247, 250, 250);
+  transition: left 0.3s ease;
+  width: 14rem;
+  height: 95vh;
+  border-radius: 0.25rem;
+  border: rgb(121, 205, 216) solid 2px;
 }
 
-
 #close-btn {
-    width: 1.5rem;
-    margin-bottom: 1rem;
-    border: rgb(121, 205, 216) solid 2px;
-    border-radius: 5rem;
-    background-color:rgb(247, 250, 250);
-    
+  position: absolute;
+  left: 11.5rem;
+  top: 0.5rem;
+  width: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5rem;
+  background-color: rgb(247, 250, 250);
+  border: white;
+  font-size: 1rem;
 }
 
 #close-btn:hover {
-    background-color: rgb(219, 22, 45);
+  color: red;
 }
 
 .side-menu.open {
-    left: 0;
+  left: 0;
 }
 
 .side-menu nav {
-
-    display: flex;
-    flex-direction: column;
-    padding: 0.75rem;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
 }
 
 .nav-button {
-    padding: 0.25rem;
+  padding: 0.25rem;
 }
 
 .nav-button:hover {
-    text-decoration: underline;
-
+  text-decoration: underline;
 }
 
 .category-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
 }
 
 .nav-button-category {
-    border: rgb(121, 205, 216) solid 2px;
-    border-radius: 5rem;
-    margin: 0.1rem;
-    padding: 0.2rem;
+  border: rgb(139, 198, 206) solid 2px;
+  background-color: rgb(171, 241, 241);
+  border-radius: 5rem;
+  margin: 0.1rem;
+  padding: 0.2rem;
+  font-size: 0.8rem;
 }
 
 .nav-button-category:hover {
-    background-color: rgb(124, 161, 171);
+  background-color: rgb(25, 144, 176);
+  cursor: pointer;
 }
 
 .about-container {
-    display: flex;
-    flex-direction: column;
-    border: rgb(121, 205, 216) solid 1px;
-    margin-top: 1rem;
-    padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  border: rgb(121, 205, 216) solid 1px;
+  margin-top: 1rem;
+  padding: 0.25rem;
 }
 
-.about-button {
-    padding: 0.25rem;
-}
+.top-rated-button {
+  color: rgb(2, 1, 1);
+  padding: 0.5rem;
+  background-color: rgb(185, 218, 218);
+  border-radius: 1rem;
+  margin: 0.25rem;
+  font-size: 1rem;
 
-.about-button:hover {
-    text-decoration: underline;
+  border: white solid 2px;
+
+}
+.top-rated-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

@@ -1,5 +1,28 @@
+
+
 body {
     background-color: #aaf7ff;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+  color: rgb(27, 27, 27);
+}
+
+a:visited {
+  color: rgb(27,27,27);
+}
+
+a:hover {
+  color: rgb(27, 27, 27);
+}
+
+a:active {
+  color: rgb(0, 0, 0);
 }
 
 main > * {
@@ -21,8 +44,24 @@ img.cart_button {
 }
 
 img.cart_icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
+}
+
+img.menu-image {
+    background-color: none;
+    width: 45px;
+    height: 45px;
+}
+
+.arrow {
+    width: 15px;
+    height: 10px;
+}
+.arrow_hidden {
+    width: 15px;
+    height: 10px;
+    display: none;
 }
 
 section.grid {
@@ -42,6 +81,13 @@ section.header {
     justify-content: space-between;
     align-items: center;
 }
+section.cart-plus-total {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 div.movie_list_card {
   display: flex;
@@ -50,7 +96,7 @@ div.movie_list_card {
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
-  min-height: 22rem;
+  min-height: 25rem;
 }
 
 div.movie_card_details {
@@ -63,6 +109,7 @@ div.movie_list_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
 }
 
@@ -73,6 +120,17 @@ span.movie_grid_title {
 span.movie_grid_price {
     color: red;
     font-weight: 600;
+    text-align: end;
+    margin-top: 1rem;
+}
+
+.amount {
+    color: grey;
+    font-weight: 400;
+}
+
+.amount_hidden {
+    display: none;
 }
 
 button.buy_now {
@@ -83,6 +141,22 @@ button.buy_now {
     border-radius: 100px;
 }
 
+button.remove {
+    background-color: rgb(255, 107, 107);
+    padding: 10px;
+    margin-left: 2px;
+    border: 0px;
+    border-radius: 100px;
+}
+
+.button_hidden {
+    padding: 10px;
+    margin-left: 2px;
+    border: 0px;
+    border-radius: 100px;
+    display: none;
+}   
+
 button.add_to_cart {
     background-color: rgb(225, 225, 225);
     padding: 10px;
@@ -91,15 +165,29 @@ button.add_to_cart {
     border-radius: 100px;
 }
 
-.add_to_cart:focus {
+.added {
     background-color: rgb(167, 255, 167);
+    padding: 10px;
+    margin-right: 2px;
+    border: 0px;
+    border-radius: 100px;
+    pointer-events: none;
+    opacity: 0.2;
 }
 
-#logo {
+.quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+/* #logo {
     font-family: Modak;
     font-weight: 300;
-    font-size: 4rem;
-}
+    font-size: 2.5rem;
+} */
 
 .movie-grid {
     display: grid;
@@ -121,4 +209,52 @@ button.add_to_cart {
     border-radius: 12px;
     font-size: 30px;
 }
+
+
+@media (max-width: 1080px ){
+    .search-input{
+        display: flex;
+        width: 600px;
+    }
+    
+}
+
+
+@media (max-width: 780px){
+    .search-input{
+        display: flex;
+        width: 300px;
+        font-size: 15px;
+        padding: 30px;
+       
+       
+    }
+    
+}
+
+
+
+
+@media (max-width: 780px){
+    .movie-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+       
+    }
+}
+
+@media (max-width: 430px){
+    .movie-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+       
+    }
+
+
+
+    
+}
+
 

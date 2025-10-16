@@ -1,21 +1,71 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import CartTotalItems from "./CartTotalItems";
+import { useState } from "react";
+import SideMenu from "./SideMenu";
+import "../css/Top.css";
+import { movieGenreList, tvGenreList } from "../api/genreMaps";
+import genreAPI from "../api/genreAPI";
+import popularAPI from "../api/popularAPI";
 
-const Header = ({onCartClick}) => {
 
+const Top = ({ setItems, onCartClick}) => {
+
+const [sideMenuOpen, setSideMenuOpen] = useState(false);
+
+const toggleSideMenu = () => setSideMenuOpen((prev) => !prev);
+
+const location = useLocation();
+const isHome = location.pathname === "/"; 
+
+const handleGenreSelect = async (mediaType, genreName) => {
+const genreId =
+    mediaType === "movie"
+      ? movieGenreList[genreName]
+      : tvGenreList[genreName];
+      if (!genreId) return;
+    const results = await genreAPI(mediaType, genreId);
+    setItems(results ?? []);
+    };
+
+    const handlePopularSelect = async (searchWord) => {
+     if (!searchWord) return;
+         const results = await popularAPI(searchWord);
+         setItems(results ?? []);
+     };
+    
 
     return (
-        <section className="header">
-            
+    <section className="header">
+
+        <div className="menu-container"
+        style={{visibility: isHome ? 'visible' : 'hidden' }}>
+            <SideMenu 
+                isOpen={sideMenuOpen}
+                toggleSideMenu={toggleSideMenu}
+                onGenreSelect={handleGenreSelect}
+                onPopularSelect={handlePopularSelect}
+            />
+            <img className="menu-image" src="./menu.svg" alt="menu" onClick={toggleSideMenu}/>
+        </div>
+
+
+        <Link to="/">
             <span id="logo">Movieshop</span>
+        </Link>
             
-            <img className="cart_icon"
-             src="src/assets/cart.png"
+        <section className="cart-plus-total">
+
+        <img className="cart_icon"
+             src="/cart.png"
              onClick={onCartClick}
-             
              ></img>
-           
+            <CartTotalItems></CartTotalItems>
+
         </section>
+    
+    </section>
+        
     )
 }
 
-export default Header;
+export default Top;

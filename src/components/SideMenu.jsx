@@ -1,166 +1,85 @@
 import { NavLink } from "react-router";
 import "../css/SideMenu.css";
+import { movieGenreList, tvGenreList } from "../api/genreMaps";
 
-const SideMenu = ({ isOpen, toggleSideMenu }) => {
+const SideMenu = ({
+  isOpen,
+  toggleSideMenu,
+  onGenreSelect,
+  onPopularSelect,
+}) => {
+  const handleGenreClick = (mediaType, category) => {
+    onGenreSelect(mediaType, category);
+    toggleSideMenu();
+  };
+
+  const handlePopularClick = (searchWord) => {
+    onPopularSelect(searchWord);
+    toggleSideMenu();
+    console.log("fetching.........");
+  };
+
   return (
     <>
       <div className={`side-menu ${isOpen ? "open" : ""}`}>
         <nav>
-          <button id="close-btn" onClick={toggleSideMenu}>X</button>
+          <button id="close-btn" onClick={toggleSideMenu}>
+            X
+          </button>
 
-          <NavLink
-            to="/Details"
-            onClick={toggleSideMenu}
-            className={"nav-button"}
-          >
-            Details
-          </NavLink>
+          <h3>Movieshop</h3>
 
-          <NavLink to="/Cart" onClick={toggleSideMenu} className={"nav-button"}>
-            Cart
-          </NavLink>
+          <div className="about-container">
+            <button
+              className="top-rated-button"
+              onClick={() => handlePopularClick("top_rated")}
+            >
+              Top rated movies
+            </button>
+            <button
+              className="top-rated-button"
+              onClick={() => handlePopularClick("popular")}
+            >
+              Popular movies
+            </button>
+          </div>
 
-          <NavLink
-            to="/Checkout"
-            onClick={toggleSideMenu}
-            className={"nav-button"}
-          >
-            Checkout
-          </NavLink>
+          <div className="category-conatiner">
+            <h3>Movies</h3>
 
-          <NavLink
-            to="/Confirm"
-            onClick={toggleSideMenu}
-            className={"nav-button"}
-          >
-            Confirm
-          </NavLink>
+            {Object.keys(movieGenreList).map((category) => (
+              <button
+                key={category}
+                className="nav-button-category"
+                onClick={() => handleGenreClick("movie", category)}
+              >
+                {category}
+              </button>
+            ))}
 
-          <div className="category-container">
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Action
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Adventure
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Animation
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Comedy
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Crime
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Documentary
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Drama
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Family
-            </NavLink>
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Fantasy
-            </NavLink>
+            <h3>Tv series</h3>
 
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              History
-            </NavLink>
-
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Horror
-            </NavLink>
-
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Musicals
-            </NavLink>
-
-            <NavLink
-              to="/Details"
-              onClick={toggleSideMenu}
-              className={"nav-button-category"}
-            >
-              Romance
-            </NavLink>
+            {Object.keys(tvGenreList).map((category) => (
+              <button
+                key={category}
+                className="nav-button-category"
+                onClick={() => handleGenreClick("tv", category)}
+              >
+                {category}
+              </button>
+            ))}
           </div>
 
           <div className="about-container">
-            <NavLink
-              to="/Checkout"
-              onClick={toggleSideMenu}
-              className={"about-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               About
             </NavLink>
-            <NavLink
-              to="/Checkout"
-              onClick={toggleSideMenu}
-              className={"about-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               FAQ
             </NavLink>
-            <NavLink
-              to="/Checkout"
-              onClick={toggleSideMenu}
-              className={"about-button"}
-            >
+            <NavLink to="/" onClick={toggleSideMenu} className={"nav-button"}>
               Contact
             </NavLink>
-            <NavLink
-              to="/Checkout"
-              onClick={toggleSideMenu}
-              className={"about-button"}
-            ></NavLink>
           </div>
         </nav>
       </div>

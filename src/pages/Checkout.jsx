@@ -1,12 +1,21 @@
 
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import Menu from "../components/Menu";
 import "../css/Checkout.css";
 
 function Checkout() {
 
     const navigate = useNavigate();
+    const cart = useSelector((state) => state.cart.value);
+
+    function cartTotal(cart) {
+        let sum = 0;
+        cart.forEach(item => {
+            sum += item.price * (item.quantity || 1);
+        });
+        return sum;
+    }
 
     const handleCancel = () => {
         navigate("/cart");
@@ -23,9 +32,31 @@ function Checkout() {
             <div className="checkout-container">
 
                 <div className="checkout-summary">
-                    <p><strong>Your cart:</strong> 4 items</p>
-                    <p><strong>Total:</strong> 100kr</p>
+                    <p>
+                <strong>Your cart:</strong> {cart.reduce((total, item) => total + (item.quantity || 1), 0)} items
+                    </p>
+                    <p><strong>Total:</strong> {cartTotal(cart)} kr</p>
                 </div>
+
+                <div className="checkout-items">
+                    {cart.map((cartItem, index) => (
+                        <div className="checkout-item" key={index}>
+                            <div className="checkout-item-left">
+                            <span className="checkout-item-quantity">
+                                x {cartItem.quantity || 1}
+                            </span>
+                            <img src={cartItem.poster} alt={cartItem.title} />
+                            <span className="checkout-item-title">{cartItem.title}</span>
+                        </div>
+
+                        <div className="checkout-item-right">
+                            <span className="checkout-item-price">
+                                {cartItem.price * (cartItem.quantity || 1)} kr
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
                 <form className="checkout-form" onSubmit={handlePurchase}>
                     <h3>Ship to:</h3>

@@ -12,6 +12,7 @@ import Details from './pages/Details.jsx';
 import Layout from './pages/Layout.jsx';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import NotFound from "./pages/404.jsx"
 
 
 const store = configureStore({
@@ -44,7 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/confirm",
     element: <Confirm />
+  },
+
+  {
+    path: "*",
+    element: <NotFound />
   }
+
+
 ]}
 
 ])

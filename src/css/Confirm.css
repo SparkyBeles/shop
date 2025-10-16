@@ -1,26 +1,104 @@
 .confirm-container {
   text-align: center;
   margin-top: 100px;
+  animation: fadeInContainer 1s ease forwards;
+}
+
+.checkmark-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.checkmark {
+  width: 100px;
+  height: 100px;
+  stroke-width: 2;
+  stroke: #4caf50;
+  fill: none;
+  animation: scale 0.3s ease-in-out;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #4caf50;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
 }
 
 .confirm-button {
   margin-top: 20px;
   display: inline-block;
   background: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: #ffffff !important; 
+  padding: 12px 24px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
-.confirm-button:link,
-.confirm-button:visited,
-.confirm-button:hover,
-.confirm-button:active {
-  color: white;
-  border-color: white;
-  text-decoration: none;
+.confirm-button:hover {
+  background: #0056b3; 
+  color: #ffffff !important; 
 }
+
+/* Fade-in effect for text */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 1s ease forwards;
+}
+.fade-in.delay {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
 
 
