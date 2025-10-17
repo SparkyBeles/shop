@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { remove } from "../features/CartSlice"; 
 import Quantity from "../components/Quantity";
 
-function Cart() {
+function Cart({setIsCartOpen}) {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
@@ -45,7 +45,7 @@ function Cart() {
             state: { sum: cartTotal(cart) },
           }}
         >
-          <button className="buy_now">Checkout</button>
+          <button className={cartTotal(cart) === 0 ? 'button_hidden' : 'buy_now'} onClick={() => setIsCartOpen(false)}>Checkout</button>
         </Link>
       </div>
     </div>

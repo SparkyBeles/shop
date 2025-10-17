@@ -200,34 +200,36 @@ button.add_to_cart {
 .searchBar{
     display: grid;
     justify-content: center;
-    
 }
 
 .search-input{
     width: 900px;
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 1rem;
+    border-radius: 50px;
     font-size: 30px;
 }
 
 
-@media (max-width: 1080px ){
+@media (min-width: 801px ){
     .search-input{
         display: flex;
         width: 600px;
+        padding: 2rem;
+        margin: 1rem;
+        border: none;
     }
     
 }
 
 
-@media (max-width: 780px){
+@media (max-width: 800px){
     .search-input{
         display: flex;
         width: 300px;
         font-size: 15px;
-        padding: 30px;
-       
-       
+        padding: 1rem;
+        margin: 0.5rem;
+        border: none;
     }
     
 }
