@@ -1,12 +1,15 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { clearCart } from "../features/CartSlice";
 import Menu from "../components/Menu";
 import "../css/Checkout.css";
 
 function Checkout() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.value);
 
     function cartTotal(cart) {
@@ -23,6 +26,7 @@ function Checkout() {
 
     const handlePurchase = (e) => {
         e.preventDefault();
+        dispatch(clearCart()); 
         navigate("/confirm");
     };
 
